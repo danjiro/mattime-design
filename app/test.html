@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
+  </head>
+
+  <body ng-app="starterApp" layout="column" ng-controller="UserController as ul" ng-cloak >
+    
+    <!-- HEADER -->
+    <md-toolbar layout="row" class="md-whiteframe-z1 md-hue-1">
+      <md-button id="main" class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+      <h4>Angular Material</h4>
+    </md-toolbar>
+
+    <div layout="row" flex>
+
+      <!-- SIDENAV -->
+      <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
+            ng-click="ul.toggleList()" aria-label="Show User List"
+            md-is-locked-open="$mdMedia('gt-sm')">
+
+        <div class="user-details md-whiteframe-z2" layout="column">
+          <div flex class="user-image"><md-icon md-svg-icon="svg-1" class="avatar"></md-icon></div>
+          <div flex class="user-info">
+            <h3 class="user-infotype">Name</h3>
+            <span class="blue-b"></span>
+          </div>
+        </div>
+
+        <md-list>
+          <md-list-item ng-repeat="it in ul.users" ng-click="ul.selectUser(it)">
+            <!-- <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }"> -->
+              <!-- <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon> -->
+              <p ng-class="{'selected' : it === ul.selected }">{{it.name}}</p>
+            <!-- </md-button> -->
+          </md-list-item>
+        </md-list>
+
+      </md-sidenav>
+      
+      <!-- CONTENT AREA -->
+      <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+        <md-subheader class="md-background">Dashboard</md-subheader>
+
+        <md-content flex id="content">
+
+        </md-content>
+
+      </div>
+
+    </div>
+
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-material/angular-material.js"></script>
+
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UserController.js"></script>
+    <script src="./src/users/UserService.js"></script>
+
+    <script type="text/javascript">
+
+          angular
+              .module('starterApp', ['ngMaterial', 'users'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('grey', {
+                            // 'default': '800'
+                          })
+                          .accentPalette('blue');
+
+              });
+
+    </script>
+
+  </body>
+</html>

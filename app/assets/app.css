@@ -1,0 +1,106 @@
+/*.user-details {
+    padding: 30px;
+    background: -webkit-linear-gradient(top, #1B1B1B 0%, #343434 100%);
+}
+
+.avatar {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border: 1px solid #434343;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+.user-image {
+    margin: auto;
+}
+
+h4.user-infotype {text-align: center;}
+
+.user-info {
+    margin: auto;
+}
+
+h3.user-infotype {
+    margin: 5px 0;
+    text-align: center;
+    color: white;
+}
+
+span.blue-b {
+    width: 90px;
+    height: 12px;
+    background-color: rgb(0, 0, 194);
+    display: block;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.md-list-item-inner>p {
+    color: white;
+}*/
+
+.site-sidenav {
+    background-color: rgb(31, 33, 43);
+}
+.mt-timecard .md-menu { padding: 0px; }
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.mt-timecard .mt-timecard-content {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mt-timecard .mt-timecard-content h1 {
+    font-size: 4em;
+    margin: 0.1em 0;
+    color: rgba(0, 141, 0, 0.66);
+}
+
+.mt-timecard .mt-timecard-content h5 {
+    color: rgba(0, 0, 0, 0.28);
+}
+
+.quick-add .material-icons {
+    display: block;
+}
+
+.quick-add {
+    position: absolute;
+    right: 23px;
+    top: 5em;
+}
+
+.breadcrumbs-toolbar {
+    background-color: rgb(252, 252, 252);
+    color: rgba(0, 0, 0, 0.53);
+}
+
+.mt-header .md-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-menu .md-avatar {
+    margin-right: 10px;
+}
+
+.user-menu .md-button:not([disabled]):hover {background: none;}
+
+.user-menu .mt-expand-icon {
+    height: 27px;
+}
