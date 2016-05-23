@@ -104,7 +104,43 @@
     </md-toolbar>
 
     <!-- Content area -->
-    <md-content flex id="content" layout="column" class="md-padding">
+    <md-content id="content" layout="column" class="md-padding">
+
+      <!-- Total hours container -->
+      <md-grid-list md-cols-gt-md="8" md-gutter="16px" md-row-height="4:3">
+        <md-grid-tile md-colspan="2" md-rowspan="2" md-whiteframe="1" style="background-color:rgb(159, 181, 229);">
+              <div layout="column" layout-align="start start">
+                <div layout="row">
+                  <md-icon class="md-light">all_inclusive</md-icon>
+                  <h3 class="md-subhead">Total hours</h3>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row" layout-align="center center"><h1 class="md-display-3">352</h1></div>
+              </div>
+          <!-- <div> -->
+            <!-- <div layout-align="start start"> -->
+            <!-- </div> -->
+          <!-- </div> -->
+<!--           <md-grid-tile-footer>
+            <h3>This is a footer</h3>
+          </md-grid-tile-footer> -->
+        </md-grid-tile>
+        <md-grid-tile md-colspan="2" md-rowspan="1" style="background-color:rgb(159, 181, 229);">
+
+          <h2>G</h2> 
+
+        </md-grid-tile>
+        <md-grid-tile md-colspan="4" md-rowspan="2" style="background-color:rgb(159, 181, 229);">
+
+          <h2>Graph</h2>
+
+        </md-grid-tile>
+        <md-grid-tile md-colspan="2" md-rowspan="1" style="background-color:rgb(159, 181, 229);">
+
+          <h2>NG</h2>
+
+        </md-grid-tile>
+      </md-grid-list>
 
       <!-- Time card container -->
       <div layout="row" layout-align-gt-xs="start start" layout-wrap>
