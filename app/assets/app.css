@@ -104,3 +104,66 @@ span.blue-b {
 .user-menu .mt-expand-icon {
     height: 27px;
 }
+
+.total-hours-tile-header.layout-align-start-start.layout-row {}
+
+.total-hours-tile-header .material-icons {
+    margin: auto 5px auto 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.total-hours-tile-header h4 {
+    margin: 5px 0px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+md-divider.md-light {
+    border-top-color: rgba(255, 255, 255, 0.22);
+}
+
+.total-hours-tile-header md-divider {
+    padding: 0px;
+}
+
+.total-hours-tile md-divider {
+    padding: 0px;
+}
+
+.total-hours-tile-hours h1 {
+    color: rgba(255, 255, 255, 1.0);
+    font-weight: 500;
+}
+
+.total-gi-hours-tile-header h4 {
+    margin: 0px auto;
+    font-weight: 900;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.total-gi-hours-tile-header {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.total-gi-hours-tile-hours h1, .total-gi-hours-tile-hours h6 {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.total-gi-hours-tile {
+    background-color: rgba(130, 100, 171, 0.9);
+}
+
+.total-nogi-hours-tile {
+    background-color: rgba(100, 171, 170, 0.9);
+}
+
+.total-hours-tile {
+    background-color: rgb(100, 103, 171);
+}
+
+.dashboard-tiles-container {
+    margin: 0;
+}

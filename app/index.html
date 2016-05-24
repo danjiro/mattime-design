@@ -104,48 +104,106 @@
     </md-toolbar>
 
     <!-- Content area -->
-    <md-content id="content" layout="column" class="md-padding">
+    <md-content flex class="md-padding">
 
       <!-- Total hours container -->
-      <md-grid-list md-cols-gt-md="8" md-gutter="16px" md-row-height="4:3">
-        <md-grid-tile md-colspan="2" md-rowspan="2" md-whiteframe="1" style="background-color:rgb(159, 181, 229);">
-              <div layout="column" layout-align="start start">
-                <div layout="row">
-                  <md-icon class="md-light">all_inclusive</md-icon>
-                  <h3 class="md-subhead">Total hours</h3>
-                </div>
-                <md-divider></md-divider>
-                <div layout="row" layout-align="center center"><h1 class="md-display-3">352</h1></div>
-              </div>
-          <!-- <div> -->
-            <!-- <div layout-align="start start"> -->
-            <!-- </div> -->
-          <!-- </div> -->
-<!--           <md-grid-tile-footer>
-            <h3>This is a footer</h3>
-          </md-grid-tile-footer> -->
+      <md-grid-list 
+        md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="8" 
+        md-row-height-xs="3:1" md-row-height-sm="3:1" md-row-height-gt-sm="4:3"
+        md-gutter="16px">
+
+        <!-- Total hours tile -->
+        <md-grid-tile 
+          md-colspan-xs="1" md-colspan-sm="1" md-colspan-gt-sm="2" 
+          md-rowspan="2" 
+          md-whiteframe="1">
+          <div layout="column" layout-fill layout-padding class="total-hours-tile">
+            <div layout="row" layout-align="start center" class="total-hours-tile-header">
+              <md-icon class="md-light">all_inclusive</md-icon>
+              <h4>Total hours</h4>
+            </div>
+            <md-divider class="md-light"></md-divider>
+            <div layout="row" layout-align="center center" flex class="total-hours-tile-hours">
+              <h1 class="md-display-3">1328</h1>
+            </div>
+          </div>
         </md-grid-tile>
-        <md-grid-tile md-colspan="2" md-rowspan="1" style="background-color:rgb(159, 181, 229);">
 
-          <h2>G</h2> 
-
+        <!-- Total gi hours tile -->
+        <md-grid-tile 
+          md-colspan-xs="1" md-colspan-sm="1" md-colspan-gt-sm="2"
+          md-rowspan-xs="1">
+          <div layout="row" flex layout-fill class="total-gi-hours-tile">
+            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
+              <h4 class="md-title">GI</h4>
+            </div>
+            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
+              <h1>437</h1>
+              <h6>hours</h6>
+            </div>
+          </div>
         </md-grid-tile>
-        <md-grid-tile md-colspan="4" md-rowspan="2" style="background-color:rgb(159, 181, 229);">
 
-          <h2>Graph</h2>
 
-        </md-grid-tile>
-        <md-grid-tile md-colspan="2" md-rowspan="1" style="background-color:rgb(159, 181, 229);">
-
-          <h2>NG</h2>
-
+        <!-- Total nogi hours tile -->
+        <md-grid-tile 
+          md-colspan-xs="1" md-colspan-sm="1" md-colspan-gt-sm="2"  
+          md-rowspan-xs="1">
+          <div layout="row" flex layout-fill class="total-gi-hours-tile total-nogi-hours-tile">
+            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
+              <h4 class="md-title">NO</h4>
+              <h4 class="md-title">GI</h4>
+            </div>
+            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
+              <h1>123</h1>
+              <h6>hours</h6>
+            </div>
+          </div>
         </md-grid-tile>
       </md-grid-list>
 
+      <div layout="row" layout-margin class="dashboard-tiles-container">
+        <div layout="column" layout-padding flex="25" md-whiteframe="2" class="total-hours-tile">
+          <div layout="row" layout-align="start center" class="total-hours-tile-header">
+            <md-icon class="md-light">all_inclusive</md-icon>
+            <h4>Total hours</h4>
+          </div>
+          <md-divider class="md-light"></md-divider>
+          <div layout="row" layout-align="center center" flex class="total-hours-tile-hours">
+            <h1 class="md-display-3">1328</h1>
+          </div>
+        </div>
+        <div layout="column" flex="25">
+          <div layout="row" flex class="total-gi-hours-tile">
+            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
+              <h4 class="md-title">GI</h4>
+            </div>
+            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
+              <h1>437</h1>
+              <h6>hours</h6>
+            </div>
+          </div>
+          <div layout="row" flex layout-fill class="total-gi-hours-tile total-nogi-hours-tile">
+            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
+              <h4 class="md-title">NO</h4>
+              <h4 class="md-title">GI</h4>
+            </div>
+            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
+              <h1>123</h1>
+              <h6>hours</h6>
+            </div>
+          </div>
+        </div>
+        <div layout="column" flex="50" layout-align="center center" style="background-color:rgb(100, 103, 171);">
+          Graph
+        </div>
+      </div>
+
       <!-- Time card container -->
-      <div layout="row" layout-align-gt-xs="start start" layout-wrap>
+      <div layout="row" layout-align-gt-xs="start start" layout-wrap class="time-card-container">
+
         <!-- Time card -->
-        <div ng-repeat="timeCard in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" flex-gt-md="25" flex-xs="100" flex-sm="50" flex-md="33">
+        <div ng-repeat="timeCard in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" flex-gt-md="25" flex-xs="100" flex-sm="50" flex-md="50">
           <md-card class="mt-timecard">
             <!-- Time card header -->
             <md-card-header>
