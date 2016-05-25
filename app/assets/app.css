@@ -122,3 +122,7 @@ md-divider.md-light {
 .total-gi-hours-tile-hours h1 {
     margin-bottom: 0px;
 }
+
+.md-no-padding {
+    padding: 0px;
+}

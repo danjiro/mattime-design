@@ -107,14 +107,16 @@
     <!-- Content area -->
     <md-content layout-column flex>
       <div layout-padding>
-        
+
+        <md-subheader class="md-no-sticky md-no-padding">Quick stats</md-subheader>
+
         <!-- Quick stats tiles -->
         <div layout="row" layout-padding layout-wrap class="quick-stats-tiles-container">
 
           <!-- Total hours tile -->
           <div layout="column" 
             flex-xs="100" flex-gt-xs="50" flex-gt-md="25">
-            <div class="total-hours-tile">
+            <div class="total-hours-tile" md-whiteframe="1">
               <div layout="row" layout-align="start center" class="total-hours-tile-header">
                 <md-icon class="md-light">all_inclusive</md-icon>
                 <h4>Total hours</h4>
@@ -129,7 +131,7 @@
           <!-- Total gi/nogi hours tiles -->
           <div layout="column" 
             flex-xs="100" flex-gt-xs="50" flex-gt-md="25">
-            <div layout="row" flex class="total-gi-hours-tile">
+            <div layout="row" flex md-whiteframe="1" class="total-gi-hours-tile">
               <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
                 <h4 class="md-title">GI</h4>
               </div>
@@ -138,7 +140,7 @@
                 <h6>hours</h6>
               </div>
             </div>
-            <div layout="row" layout-fill flex class="total-gi-hours-tile total-nogi-hours-tile">      
+            <div layout="row" layout-fill flex md-whiteframe="1" class="total-gi-hours-tile total-nogi-hours-tile">      
               <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
                 <h4 class="md-title">NO</h4>
                 <h4 class="md-title">GI</h4>
@@ -153,12 +155,14 @@
           <!-- Graph tile -->
           <div layout="row" 
             flex-xs="100" flex-gt-xs="100" flex-gt-md="50">
-            <div flex layout layout-align="center center"style="background-color:aliceblue;">
+            <div flex layout layout-align="center center" md-whiteframe="1" style="background-color:aliceblue;">
               <h3 style="color:white;">GRAPH</h3>
             </div>
           </div>
 
         </div>
+
+        <md-subheader class="md-no-sticky md-no-padding">Latest entries</md-subheader>
 
         <!-- Time card container -->      
         <div layout="row" layout-align-gt-xs="start start" layout-wrap class="time-card-container">
