@@ -31,7 +31,7 @@
       ng-click="ul.toggleList()" aria-label="Show User List"
       md-is-locked-open="$mdMedia('gt-sm')">
 
-      <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:white"></md-icon>
+      <!-- <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:white"></md-icon> -->
 <!--       <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:blue"></md-icon>
       <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:purple"></md-icon>
       <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:brown"></md-icon>
@@ -103,154 +103,118 @@
       </div>
     </md-toolbar>
 
+
     <!-- Content area -->
-    <md-content flex class="md-padding">
+    <md-content layout-column flex>
+      <div layout-padding>
+        
+        <!-- Quick stats tiles -->
+        <div layout="row" layout-padding layout-wrap class="quick-stats-tiles-container">
 
-      <!-- Total hours container -->
-      <md-grid-list 
-        md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="8" 
-        md-row-height-xs="3:1" md-row-height-sm="3:1" md-row-height-gt-sm="4:3"
-        md-gutter="16px">
-
-        <!-- Total hours tile -->
-        <md-grid-tile 
-          md-colspan-xs="1" md-colspan-sm="1" md-colspan-gt-sm="2" 
-          md-rowspan="2" 
-          md-whiteframe="1">
-          <div layout="column" layout-fill layout-padding class="total-hours-tile">
-            <div layout="row" layout-align="start center" class="total-hours-tile-header">
-              <md-icon class="md-light">all_inclusive</md-icon>
-              <h4>Total hours</h4>
-            </div>
-            <md-divider class="md-light"></md-divider>
-            <div layout="row" layout-align="center center" flex class="total-hours-tile-hours">
-              <h1 class="md-display-3">1328</h1>
+          <!-- Total hours tile -->
+          <div layout="column" 
+            flex-xs="100" flex-gt-xs="50" flex-gt-md="25">
+            <div class="total-hours-tile">
+              <div layout="row" layout-align="start center" class="total-hours-tile-header">
+                <md-icon class="md-light">all_inclusive</md-icon>
+                <h4>Total hours</h4>
+              </div>
+              <md-divider class="md-light"></md-divider>
+              <div layout="row" layout-align="center center" flex class="total-hours-tile-hours">
+                <h1 class="md-display-3">1328</h1>
+              </div>
             </div>
           </div>
-        </md-grid-tile>
 
-        <!-- Total gi hours tile -->
-        <md-grid-tile 
-          md-colspan-xs="1" md-colspan-sm="1" md-colspan-gt-sm="2"
-          md-rowspan-xs="1">
-          <div layout="row" flex layout-fill class="total-gi-hours-tile">
-            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
-              <h4 class="md-title">GI</h4>
+          <!-- Total gi/nogi hours tiles -->
+          <div layout="column" 
+            flex-xs="100" flex-gt-xs="50" flex-gt-md="25">
+            <div layout="row" flex class="total-gi-hours-tile">
+              <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
+                <h4 class="md-title">GI</h4>
+              </div>
+              <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours md-padding">
+                <h1>437</h1>
+                <h6>hours</h6>
+              </div>
             </div>
-            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
-              <h1>437</h1>
-              <h6>hours</h6>
-            </div>
-          </div>
-        </md-grid-tile>
-
-
-        <!-- Total nogi hours tile -->
-        <md-grid-tile 
-          md-colspan-xs="1" md-colspan-sm="1" md-colspan-gt-sm="2"  
-          md-rowspan-xs="1">
-          <div layout="row" flex layout-fill class="total-gi-hours-tile total-nogi-hours-tile">
-            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
-              <h4 class="md-title">NO</h4>
-              <h4 class="md-title">GI</h4>
-            </div>
-            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
-              <h1>123</h1>
-              <h6>hours</h6>
+            <div layout="row" layout-fill flex class="total-gi-hours-tile total-nogi-hours-tile">      
+              <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
+                <h4 class="md-title">NO</h4>
+                <h4 class="md-title">GI</h4>
+              </div>
+              <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours md-padding">
+                <h1>123</h1>
+                <h6>hours</h6>
+              </div>
             </div>
           </div>
-        </md-grid-tile>
-      </md-grid-list>
-
-      <div layout="row" layout-margin class="dashboard-tiles-container">
-        <div layout="column" layout-padding flex="25" md-whiteframe="2" class="total-hours-tile">
-          <div layout="row" layout-align="start center" class="total-hours-tile-header">
-            <md-icon class="md-light">all_inclusive</md-icon>
-            <h4>Total hours</h4>
+          
+          <!-- Graph tile -->
+          <div layout="row" 
+            flex-xs="100" flex-gt-xs="100" flex-gt-md="50">
+            <div flex layout layout-align="center center"style="background-color:aliceblue;">
+              <h3 style="color:white;">GRAPH</h3>
+            </div>
           </div>
-          <md-divider class="md-light"></md-divider>
-          <div layout="row" layout-align="center center" flex class="total-hours-tile-hours">
-            <h1 class="md-display-3">1328</h1>
+
+        </div>
+
+        <!-- Time card container -->      
+        <div layout="row" layout-align-gt-xs="start start" layout-wrap class="time-card-container">
+
+          <!-- Time card -->      
+          <div ng-repeat="timeCard in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" 
+            flex-gt-md="25" flex-xs="100" flex-sm="50" flex-md="50">
+            <md-card class="mt-timecard">
+              <!-- Time card header -->      
+              <md-card-header>
+                <md-card-avatar>
+                  <md-icon>accessibility</md-icon>
+                </md-card-avatar>
+                <md-card-header-text>
+                  <span class="md-title">Absolute</span>
+                  <span class="md-subhead">15/1/2016 7:00PM</span>
+                </md-card-header-text>
+              </md-card-header>
+              <!-- Time card content -->      
+              <md-card-content layout layout-align="center center" class="mt-timecard-content">
+                <h1>{{$index}}</h1>
+                <h5>hour{{$index > 1 ? 's' : ''}}</h5>
+              </md-card-content>
+              <!-- Time card actions -->      
+              <md-card-actions layout="row" layout-align"start center">
+                <md-card-icon-actions>
+                  <md-button class="md-icon-button" aria-label="Details">
+                    <md-tooltip md-direction="bottom">Details</md-tooltip>
+                    <md-icon>details</md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Edit">
+                    <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                    <md-icon>edit</md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Delete">
+                    <md-tooltip md-direction="bottom">Delete</md-tooltip>
+                    <md-icon>delete</md-icon>
+                  </md-button>
+                </md-card-icon-actions>
+                <!-- Time card action more options -->      
+                <md-menu md-position-mode="target-right target">
+                  <md-button md-menu-origin class="md-icon-button" aria-label="Options" ng-click="$mdOpenMenu($event)">
+                    <md-icon>more_vert</md-icon>
+                  </md-button>
+                  <md-menu-content width="3">
+                    <md-menu-item ng-repeat="item in [1,2,3]">
+                      <md-button>Button {{item}}</md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </md-card-actions>
+            </md-card>
           </div>
         </div>
-        <div layout="column" flex="25">
-          <div layout="row" flex class="total-gi-hours-tile">
-            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
-              <h4 class="md-title">GI</h4>
-            </div>
-            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
-              <h1>437</h1>
-              <h6>hours</h6>
-            </div>
-          </div>
-          <div layout="row" flex layout-fill class="total-gi-hours-tile total-nogi-hours-tile">
-            <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
-              <h4 class="md-title">NO</h4>
-              <h4 class="md-title">GI</h4>
-            </div>
-            <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours">
-              <h1>123</h1>
-              <h6>hours</h6>
-            </div>
-          </div>
-        </div>
-        <div layout="column" flex="50" layout-align="center center" style="background-color:rgb(100, 103, 171);">
-          Graph
-        </div>
-      </div>
 
-      <!-- Time card container -->
-      <div layout="row" layout-align-gt-xs="start start" layout-wrap class="time-card-container">
-
-        <!-- Time card -->
-        <div ng-repeat="timeCard in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" flex-gt-md="25" flex-xs="100" flex-sm="50" flex-md="50">
-          <md-card class="mt-timecard">
-            <!-- Time card header -->
-            <md-card-header>
-              <md-card-avatar>
-                <md-icon>accessibility</md-icon>
-              </md-card-avatar>
-              <md-card-header-text>
-                <span class="md-title">Absolute</span>
-                <span class="md-subhead">15/1/2016 7:00PM</span>
-              </md-card-header-text>
-            </md-card-header>
-            <!-- Time card content -->
-            <md-card-content layout layout-align="center center" class="mt-timecard-content">
-              <h1>{{$index}}</h1>
-              <h5>hour{{$index > 1 ? 's' : ''}}</h5>
-            </md-card-content>
-            <!-- Time card actions -->
-            <md-card-actions layout="row" layout-align"start center">
-              <md-card-icon-actions>
-                <md-button class="md-icon-button" aria-label="Details">
-                  <md-tooltip md-direction="bottom">Details</md-tooltip>
-                  <md-icon>details</md-icon>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="Edit">
-                  <md-tooltip md-direction="bottom">Edit</md-tooltip>
-                  <md-icon>edit</md-icon>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="Delete">
-                  <md-tooltip md-direction="bottom">Delete</md-tooltip>
-                  <md-icon>delete</md-icon>
-                </md-button>
-              </md-card-icon-actions>
-              <!-- Time card action more options -->
-              <md-menu md-position-mode="target-right target">
-                <md-button md-menu-origin class="md-icon-button" aria-label="Options" ng-click="$mdOpenMenu($event)"> 
-                  <md-icon>more_vert</md-icon>
-                </md-button>
-                <md-menu-content width="3">
-                  <md-menu-item ng-repeat="item in [1,2,3]">
-                    <md-button>Button {{item}}</md-button>
-                  </md-menu-item>
-                </md-menu-content>
-              </md-menu>
-            </md-card-actions>
-          </md-card>
-        </div> 
-      </div>
+      </div> <!-- md-content container -->
     </md-content>
 
   </div>
