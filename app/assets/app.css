@@ -5,7 +5,7 @@
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-36 {font-size: 36px;height: 36px;width: 36px;}
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
 .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
@@ -125,4 +125,58 @@ md-divider.md-light {
 
 .md-no-padding {
     padding: 0px;
+}
+
+.sidenav-user-container .mt-user-avatar {
+    width: 125px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.46);
+    box-sizing: content-box;
+}
+
+.mt-light {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sidenav-user-container .avatar-belt {
+    width: 45%;
+    height: auto;
+}
+
+.white-belt {
+    color: rgb(255, 255, 255);
+}
+
+.blue-belt {
+    color: rgb(73, 73, 221);
+}
+
+.purple-belt {
+    color: rgb(154, 24, 154);
+}
+
+.brown-belt {
+    color: rgb(141, 69, 51);
+}
+
+.black-belt {
+    color: rgb(0, 0, 0);
+}
+
+.black-belt #stripe-bar {
+    fill: red;
+}
+
+.sidenav-user-container {
+    background-color: rgb(31, 33, 43);
+    padding: 32px;
+    min-height: 300px;
+    background: -webkit-linear-gradient(top, rgb(19, 20, 26) 0%, #1F212B 100%);
+    background: -moz-linear-gradient(top, rgb(19, 20, 26) 0%, #1F212B 100%);
+    background: linear-gradient(top, rgb(19, 20, 26) 0%, #1F212B 100%);
+    margin: 0;
+}
+
+.sidenav-menu {
 }

@@ -31,23 +31,43 @@
       ng-click="ul.toggleList()" aria-label="Show User List"
       md-is-locked-open="$mdMedia('gt-sm')">
 
-      <!-- <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:white"></md-icon> -->
-<!--       <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:blue"></md-icon>
-      <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:purple"></md-icon>
-      <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:brown"></md-icon>
-      <md-icon ng-style='{width:"50px", height:"50px"}' md-svg-icon="belts:black"></md-icon> -->
-    <md-list>
+    <!-- Sidenav user header -->  
+    <div class="sidenav-user-container" 
+      layout="column" layout-align="center center" layout-margin>
+
+      <img src="http://www.placehold.it/400x400" alt="Avatar" md-whiteframe="1" class="mt-user-avatar">
+      <h1 class="md-title mt-light">Mantis Tobogan</h1>
+      <md-icon class="avatar-belt blue-belt" md-svg-icon="belts:no-stripe"></md-icon>
+
+    </div>
+
+    <md-divider></md-divider>
+
+    <!-- Sidenav menu list -->
+    <md-list class="sidenav-menu mt-light">
       <md-list-item ng-click="null">
-            test1
+        <md-icon class="md-light md-avatar-icon">note_add</md-icon>
+        <p>Add new entry</p>
       </md-list-item>
       <md-list-item ng-click="null">
-            test1
+        <md-icon class="md-light md-avatar-icon">view_comfy</md-icon>
+        <p>Entries</p>
       </md-list-item>
       <md-list-item ng-click="null">
-            test1
+        <md-icon class="md-light md-avatar-icon">fitness_center</md-icon>
+        <p>Goals</p>
       </md-list-item>
       <md-list-item ng-click="null">
-            test1
+        <md-icon class="md-light md-avatar-icon">show_chart</md-icon>
+        <p>Stats</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">school</md-icon>
+        <p>Schools</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">label</md-icon>
+        <p>Tags</p>
       </md-list-item>
     </md-list>
 
@@ -108,7 +128,7 @@
     <md-content layout-column flex>
       <div layout-padding>
 
-        <md-subheader class="md-no-sticky md-no-padding">Quick stats</md-subheader>
+        <md-subheader class="md-no-sticky mt-no-padding">Quick stats</md-subheader>
 
         <!-- Quick stats tiles -->
         <div layout="row" layout-padding layout-wrap class="quick-stats-tiles-container">
@@ -162,13 +182,13 @@
 
         </div>
 
-        <md-subheader class="md-no-sticky md-no-padding">Latest entries</md-subheader>
+        <md-subheader class="md-no-sticky mt-no-padding">Latest entries</md-subheader>
 
         <!-- Time card container -->      
         <div layout="row" layout-align-gt-xs="start start" layout-wrap class="time-card-container">
 
           <!-- Time card -->      
-          <div ng-repeat="timeCard in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" 
+          <div ng-repeat="timeCard in [1,2,3,4,5,6,7,8]" 
             flex-gt-md="25" flex-xs="100" flex-sm="50" flex-md="50">
             <md-card class="mt-timecard">
               <!-- Time card header -->      
@@ -216,6 +236,14 @@
               </md-card-actions>
             </md-card>
           </div>
+
+          <!-- View more button -->
+          <div layout="column" layout-align="center center" layout-fill>
+            <md-button aria-label="View all entries">
+              <md-icon class="md-36">view_comfy</md-icon>
+            </md-button>
+          </div>
+
         </div>
 
       </div> <!-- md-content container -->
