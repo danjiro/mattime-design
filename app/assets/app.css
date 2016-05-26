@@ -180,3 +180,7 @@ md-divider.md-light {
 
 .sidenav-menu {
 }
+
+.sidenav-menu .active {
+    background-color: rgba(158,158,158,0.2);
+}
