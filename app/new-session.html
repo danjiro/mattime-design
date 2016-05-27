@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css">
+    <link rel="stylesheet" href="assets/app.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
+  </head>
+
+  <body ng-app="starterApp" layout="row" ng-controller="UserController as ul" ng-cloak >
+
+  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+      md-component-id="left"
+      ng-click="ul.toggleList()" aria-label="Show User List"
+      md-is-locked-open="$mdMedia('gt-sm')">
+
+    <!-- Sidenav user header -->  
+    <div class="sidenav-user-container" 
+      layout="column" layout-align="center center" layout-margin>
+
+      <img src="http://www.placehold.it/400x400" alt="Avatar" md-whiteframe="1" class="mt-user-avatar">
+      <h1 class="md-title mt-light">Mantis Tobogan</h1>
+      <!-- <md-icon class="avatar-belt blue-belt" md-svg-icon="belts:no-stripe"></md-icon> -->
+
+    </div>
+
+    <md-divider></md-divider>
+
+    <!-- Sidenav menu list -->
+    <md-list class="sidenav-menu mt-light">
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">dashboard</md-icon>
+        <p>Dashboard</p>
+      </md-list-item>
+      <md-list-item class="active" ng-click="null">
+        <md-icon class="md-light md-avatar-icon">note_add</md-icon>
+        <p>New session</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">view_comfy</md-icon>
+        <p>Sessions</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">fitness_center</md-icon>
+        <p>Goals</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">show_chart</md-icon>
+        <p>Stats</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">school</md-icon>
+        <p>Schools</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">label</md-icon>
+        <p>Tags</p>
+      </md-list-item>
+    </md-list>
+
+  </md-sidenav>
+
+
+  <div flex layout="column" tabIndex="-1" role="main">
+
+    <!-- Header toolbar -->
+    <md-toolbar md-whiteframe="3" class="md-tall mt-header">
+      <div class="md-toolbar-tools">
+
+        <!-- Menu button -->
+        <md-button id="main" class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+          <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <h3> <span>MT</span> </h3>
+        
+        <span flex></span>
+
+        <!-- User menu area -->
+        <md-menu md-position-mode="target-right target" md-offset="-10 60" class="user-menu">
+          <md-button md-no-ink="true" ng-click="$mdOpenMenu($event)" aria-label="Open user menu">
+            <md-icon md-svg-icon="svg-10" class="md-avatar" aria-label="Profile photo"></md-icon>
+            <span hide-xs>Mantis Tobogan</span>
+            <md-icon class="mt-expand-icon">expand_more</md-icon>
+          </md-button>
+          <md-menu-content width="3">
+            <md-menu-item>
+              <md-button><md-icon>person</md-icon>Profile</md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button><md-icon>settings</md-icon>Settings</md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button><md-icon>power_settings_new</md-icon>Logout</md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+
+      </div>
+
+      <span flex></span>
+
+      <!-- Breadcrumbs toolbar -->
+      <div class="md-toolbar-tools md-toolbar-tools-bottom breadcrumbs-toolbar">
+        <i class="material-icons">note_add</i><h2><span>&nbsp;New session</span></h2>
+        <div class="quick-add">
+          <md-button class="md-fab md-accent" aria-label="Quick Add">
+            <i class="material-icons">add</i>
+          </md-button>
+        </div>
+      </div>
+    </md-toolbar>
+
+
+    <!-- Content area -->
+    <md-content layout-column flex>
+      <div layout-padding>
+
+        <form role="form">
+          <div layout="row">
+
+            <div layout="column" layout-margin
+              flex="50">
+              
+              <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                layout="row" layout-wrap 
+                ng-model="session.gi">
+                <md-radio-button aria-label="Gi selection"
+                  layout="column" flex                  
+                  ng-value="true">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-display-1">Gi</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="Gi selection"
+                  layout="column" flex                  
+                  ng-value="false">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-display-1">Nogi</h1></md-button>
+                </md-radio-button>
+              </md-radio-group>
+
+              <h1 class="md-title">Session length</h1>
+              <h2 class="md-subhead">Hours</h2>
+
+              <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                layout="row" layout-wrap 
+                ng-model="session.matTimeHours">
+                <md-radio-button aria-label="1 hour"
+                  layout="column" flex                  
+                  ng-value="1">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>1</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="2 hours"
+                  layout="column" flex                  
+                  ng-value="2">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>2</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="3 hours"
+                  layout="column" flex                  
+                  ng-value="3">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>3</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="4 hours"
+                  layout="column" flex                  
+                  ng-value="4">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>4</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="5 hours"
+                  layout="column" flex                  
+                  ng-value="5">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>5</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="6 hours"
+                  layout="column" flex                  
+                  ng-value="6">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>6</h1></md-button>
+                </md-radio-button>
+              </md-radio-group>
+              
+              <h2 class="md-subhead">Minutes</h2>
+              <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                layout="row" layout-wrap 
+                ng-model="session.matTimeMinutes">
+                <md-radio-button aria-label="0 minutes"
+                  layout="column" flex                  
+                  ng-value="0">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">0</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="15 minutes"
+                  layout="column" flex                  
+                  ng-value="0.25">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">15</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="30 minutes"
+                  layout="column" flex                  
+                  ng-value="0.5">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">30</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="45 minutes"
+                  layout="column" flex                  
+                  ng-value="0.75">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">45</h1></md-button>
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+
+
+            <div layout="column"
+              flex="50">
+              <div style="height: 300px; background-color:aliceblue;"
+            </div>
+
+          </div>
+        </form>
+
+      </div> <!-- md-content container -->
+    </md-content>
+
+  </div> 
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
+
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UserController.js"></script>
+    <script src="./src/users/UserService.js"></script>
+
+    <script type="text/javascript">
+
+          angular
+              .module('starterApp', ['ngMaterial', 'users'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512)
+                      .iconSet("belts", "./assets/svg/belts.svg", 512);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('indigo', {
+                            // 'default': '800'
+                          })
+                          .accentPalette('blue', {
+                            // 'default': '200'
+                          });
+
+              });
+
+    </script>
+
+  </body>
+</html>

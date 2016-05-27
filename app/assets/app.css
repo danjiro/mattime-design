@@ -184,3 +184,48 @@ md-divider.md-light {
 .sidenav-menu .active {
     background-color: rgba(158,158,158,0.2);
 }
+
+.material-icons.md-72 {
+    font-size: 72px;
+    height: 72px;
+    width: 72px;
+}
+
+.mt-new-session-radio-group .material-icons {
+    color: rgb(238, 238, 238);
+    transition: color 0.3s linear;
+    background-color: #FAFAFA;
+}
+
+.mt-new-session-radio-group md-radio-button:hover .material-icons {
+    color: #D5D5D5;
+}
+
+.mt-new-session-radio-group md-radio-button.md-checked .material-icons {
+    color: #3F51B5;
+}
+
+.mt-new-session-radio-group ._md-label {
+    
+margin-left: -10px;
+}
+
+.mt-new-session-radio-group .mt-new-session-buttons {
+    width: 97%;
+    background-color: rgb(238, 238, 238);
+    color: white;
+    min-width: 50px;
+}
+
+.mt-new-session-radio-group .mt-new-session-buttons h1,
+.mt-new-session-radio-group .mt-new-session-buttons h3 {
+    font-weight: 700;
+}
+
+.mt-new-session-radio-group md-radio-button:hover .mt-new-session-buttons {
+    background-color: #D5D5D5;
+}
+
+.mt-new-session-radio-group md-radio-button.md-checked .mt-new-session-buttons {
+    background-color: #3F51B5;
+}
