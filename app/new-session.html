@@ -219,9 +219,27 @@
             </div>
 
 
-            <div layout="column"
+            <div layout="column" layout-margin
               flex="50">
-              <div style="height: 300px; background-color:aliceblue;"
+              
+              <h2 class="md-title">Date</h2>
+              <md-datepicker ng-model="myDate" ng-required md-placeholder="Enter date"></md-datepicker>
+
+              <h2 class="md-title">Technique tags</h2>
+              <md-chips
+                    ng-model="ul.tags"
+                    md-separator-keys="ul.keys"
+                    placeholder="Enter a technique tag"
+                    secondary-placeholder="Comma seperated tags"></md-chips>
+
+              <h2 class="md-title">Notes</h2>
+              <md-input-container class="md-block">
+                <!-- <label>Session notes</label> -->
+                <textarea ng-model="ul.notes" rows="7" md-select-on-focus></textarea>
+              </md-input-container>
+
+              <div layout layout-align="end end"><md-button class="md-raised md-primary">Save</md-button></div>
+
             </div>
 
           </div>
