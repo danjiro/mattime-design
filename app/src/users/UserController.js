@@ -14,9 +14,12 @@
    * @param avatarsService
    * @constructor
    */
-  function UserController( userService, $mdSidenav, $mdBottomSheet, $log) {
+  function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $mdConstant) {
     var self = this;
 
+    self.keys = [186, 188, 13];
+    self.tags = ['Deep half', 'Reverse De la riva'];
+    self.notes = "";
     self.selected     = null;
     self.users        = [ ];
     self.selectUser   = selectUser;

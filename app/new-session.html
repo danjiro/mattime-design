@@ -37,7 +37,7 @@
 
       <img src="http://www.placehold.it/400x400" alt="Avatar" md-whiteframe="1" class="mt-user-avatar">
       <h1 class="md-title mt-light">Mantis Tobogan</h1>
-      <md-icon class="avatar-belt blue-belt" md-svg-icon="belts:no-stripe"></md-icon>
+      <!-- <md-icon class="avatar-belt blue-belt" md-svg-icon="belts:no-stripe"></md-icon> -->
 
     </div>
 
@@ -45,11 +45,11 @@
 
     <!-- Sidenav menu list -->
     <md-list class="sidenav-menu mt-light">
-      <md-list-item class="active" ng-click="null">
+      <md-list-item ng-click="null">
         <md-icon class="md-light md-avatar-icon">dashboard</md-icon>
         <p>Dashboard</p>
       </md-list-item>
-      <md-list-item ng-click="null">
+      <md-list-item class="active" ng-click="null">
         <md-icon class="md-light md-avatar-icon">note_add</md-icon>
         <p>New session</p>
       </md-list-item>
@@ -118,7 +118,7 @@
 
       <!-- Breadcrumbs toolbar -->
       <div class="md-toolbar-tools md-toolbar-tools-bottom breadcrumbs-toolbar">
-        <i class="material-icons">dashboard</i><h2><span>&nbsp;Dashboard</span></h2>
+        <i class="material-icons">note_add</i><h2><span>&nbsp;New session</span></h2>
         <div class="quick-add">
           <md-button class="md-fab md-accent" aria-label="Quick Add">
             <i class="material-icons">add</i>
@@ -129,126 +129,133 @@
 
 
     <!-- Content area -->
-    <md-content layout-column flex>
+    <md-content flex>
       <div layout-padding>
 
-        <md-subheader class="md-no-sticky mt-no-padding">Quick stats</md-subheader>
+        <form role="form">
+          <div layout-xs="column" layout-sm="column" layout="row">
 
-        <!-- Quick stats tiles -->
-        <div layout="row" layout-padding layout-wrap class="quick-stats-tiles-container">
-
-          <!-- Total hours tile -->
-          <div layout="column" 
-            flex-xs="100" flex-gt-xs="50" flex-gt-md="25">
-            <div class="total-hours-tile" md-whiteframe="1">
-              <div layout="row" layout-align="start center" class="total-hours-tile-header">
-                <md-icon class="md-light">all_inclusive</md-icon>
-                <h4>Total hours</h4>
+            <div layout="column" layout-margin
+              flex-xs="100" flex-sm="100" flex="50">
+              
+              <div layout="row" layout-align="start start">
+                <div flex>
+                  <h2 class="md-title">Date</h2>
+                  <md-datepicker ng-model="myDate" ng-required md-placeholder="Enter date"></md-datepicker>
+                </div>
+                <div flex style="background-color:aliceblue">
+                  <h2 class="md-title">Time</h2>
+                </div>
               </div>
-              <md-divider class="md-light"></md-divider>
-              <div layout="row" layout-align="center center" flex class="total-hours-tile-hours">
-                <h1 class="md-display-3">1328</h1>
+
+              <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                layout="row" layout-wrap 
+                ng-model="session.gi">
+                <md-radio-button aria-label="Gi selection"
+                  layout="column" flex                  
+                  ng-value="true">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-display-1">Gi</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="Gi selection"
+                  layout="column" flex                  
+                  ng-value="false">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-display-1">Nogi</h1></md-button>
+                </md-radio-button>
+              </md-radio-group>
+
+              <h1 class="md-title">Session length</h1>
+              <h2 class="md-subhead">Hours</h2>
+
+              <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                layout="row" layout-wrap 
+                ng-model="session.matTimeHours">
+                <md-radio-button aria-label="1 hour"
+                  layout="column" flex                  
+                  ng-value="1">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>1</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="2 hours"
+                  layout="column" flex                  
+                  ng-value="2">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>2</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="3 hours"
+                  layout="column" flex                  
+                  ng-value="3">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>3</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="4 hours"
+                  layout="column" flex                  
+                  ng-value="4">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>4</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="5 hours"
+                  layout="column" flex                  
+                  ng-value="5">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>5</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="6 hours"
+                  layout="column" flex                  
+                  ng-value="6">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1>6</h1></md-button>
+                </md-radio-button>
+              </md-radio-group>
+              
+              <h2 class="md-subhead">Minutes</h2>
+              <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                layout="row" layout-wrap 
+                ng-model="session.matTimeMinutes">
+                <md-radio-button aria-label="0 minutes"
+                  layout="column" flex                  
+                  ng-value="0">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">0</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="15 minutes"
+                  layout="column" flex                  
+                  ng-value="0.25">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">15</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="30 minutes"
+                  layout="column" flex                  
+                  ng-value="0.5">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">30</h1></md-button>
+                </md-radio-button>
+                <md-radio-button aria-label="45 minutes"
+                  layout="column" flex                  
+                  ng-value="0.75">
+                  <md-button md-no-ink class="md-raised mt-new-session-buttons"><h1 class="md-title">45</h1></md-button>
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+
+
+            <div layout="column" layout-margin
+              flex-xs="100" flex-sm="100" flex="50">
+              <div>
+                <h2 class="md-title">Technique tags</h2>
+                <md-chips
+                      ng-model="ul.tags"
+                      md-separator-keys="ul.keys"
+                      placeholder="Enter a technique tag"
+                      secondary-placeholder="Comma seperated tags"></md-chips>
+              </div>
+
+              <div>
+                <h2 class="md-title">Notes</h2>
+                <md-input-container class="md-block">
+                  <!-- <label>Session notes</label> -->
+                  <textarea ng-model="ul.notes" rows="7" md-select-on-focus></textarea>
+                </md-input-container>
               </div>
             </div>
+
           </div>
 
-          <!-- Total gi/nogi hours tiles -->
-          <div layout="column" 
-            flex-xs="100" flex-gt-xs="50" flex-gt-md="25">
-            <div layout="row" flex md-whiteframe="1" class="total-gi-hours-tile">
-              <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
-                <h4 class="md-title">GI</h4>
-              </div>
-              <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours md-padding">
-                <h1>437</h1>
-                <h6>hours</h6>
-              </div>
-            </div>
-            <div layout="row" layout-fill flex md-whiteframe="1" class="total-gi-hours-tile total-nogi-hours-tile">      
-              <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
-                <h4 class="md-title">NO</h4>
-                <h4 class="md-title">GI</h4>
-              </div>
-              <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours md-padding">
-                <h1>123</h1>
-                <h6>hours</h6>
-              </div>
-            </div>
+          <div layout layout-align="start start" layout-margin>
+            <md-button class="md-raised md-accent"
+              flex-xs>Save</md-button>
           </div>
-          
-          <!-- Graph tile -->
-          <div layout="row" 
-            flex-xs="100" flex-gt-xs="100" flex-gt-md="50">
-            <div flex layout layout-align="center center" md-whiteframe="1" style="background-color:aliceblue;">
-              <h3 style="color:white;">GRAPH</h3>
-            </div>
-          </div>
-
-        </div>
-
-        <md-subheader class="md-no-sticky mt-no-padding">Latest Sessions</md-subheader>
-
-        <!-- Time card container -->      
-        <div layout="row" layout-align-gt-xs="start start" layout-wrap class="time-card-container">
-
-          <!-- Time card -->      
-          <div ng-repeat="timeCard in [1,2,3,4,5,6,7,8]" 
-            flex-gt-md="25" flex-xs="100" flex-sm="50" flex-md="50">
-            <md-card class="mt-timecard">
-              <!-- Time card header -->      
-              <md-card-header>
-                <md-card-avatar>
-                  <md-icon>accessibility</md-icon>
-                </md-card-avatar>
-                <md-card-header-text>
-                  <span class="md-title">Absolute</span>
-                  <span class="md-subhead">15/1/2016 7:00PM</span>
-                </md-card-header-text>
-              </md-card-header>
-              <!-- Time card content -->      
-              <md-card-content layout layout-align="center center" class="mt-timecard-content">
-                <h1>{{$index}}</h1>
-                <h5>hour{{$index > 1 ? 's' : ''}}</h5>
-              </md-card-content>
-              <!-- Time card actions -->      
-              <md-card-actions layout="row" layout-align"start center">
-                <md-card-icon-actions>
-                  <md-button class="md-icon-button" aria-label="Details">
-                    <md-tooltip md-direction="bottom">Details</md-tooltip>
-                    <md-icon>details</md-icon>
-                  </md-button>
-                  <md-button class="md-icon-button" aria-label="Edit">
-                    <md-tooltip md-direction="bottom">Edit</md-tooltip>
-                    <md-icon>edit</md-icon>
-                  </md-button>
-                  <md-button class="md-icon-button" aria-label="Delete">
-                    <md-tooltip md-direction="bottom">Delete</md-tooltip>
-                    <md-icon>delete</md-icon>
-                  </md-button>
-                </md-card-icon-actions>
-                <!-- Time card action more options -->      
-                <md-menu md-position-mode="target-right target">
-                  <md-button md-menu-origin class="md-icon-button" aria-label="Options" ng-click="$mdOpenMenu($event)">
-                    <md-icon>more_vert</md-icon>
-                  </md-button>
-                  <md-menu-content width="3">
-                    <md-menu-item ng-repeat="item in [1,2,3]">
-                      <md-button>Button {{item}}</md-button>
-                    </md-menu-item>
-                  </md-menu-content>
-                </md-menu>
-              </md-card-actions>
-            </md-card>
-          </div>
-
-          <!-- View more button -->
-          <div layout="column" layout-align="center center" layout-fill>
-            <md-button aria-label="View all Sessions">
-              <md-icon class="md-36">view_comfy</md-icon>
-            </md-button>
-          </div>
-
-        </div>
+        </form>
 
       </div> <!-- md-content container -->
     </md-content>
