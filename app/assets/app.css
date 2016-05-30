@@ -229,3 +229,22 @@ margin-left: -10px;
 .mt-new-session-radio-group md-radio-button.md-checked .mt-new-session-buttons {
     background-color: #3F51B5;
 }
+
+md-icon.material-icons {
+    margin-right: 3px;
+}
+
+.session-details-time {
+    background-color: #E5E5E5;
+    padding: 0px 15px;
+    margin-top: 10px;
+    margin-right: 4px;
+}
+
+.session-details-hours {
+    margin: 10px 0;
+}
+
+.session-details-hours .total-gi-hours-tile-header h4 {
+    line-height: 30px;
+}
