@@ -17,6 +17,12 @@
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $mdConstant) {
     var self = this;
 
+    self.session = {
+      gi: false,
+      matTimeHours: 1,
+      matTimeMinutes: 0.75,
+      notes: "Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.\n\n Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne."
+    };
     self.keys = [186, 188, 13];
     self.tags = ['Deep half', 'Reverse De la riva'];
     self.notes = "";

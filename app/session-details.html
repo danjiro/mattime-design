@@ -133,52 +133,235 @@
       <div layout-padding>
 
         <md-tabs class="" md-dynamic-height>
+
+              <!-- Details tab -->
               <md-tab id="details">
                 <md-tab-label>Details</md-tab-label>
                 <md-tab-body>
-                  <div layout="row">
-                    <div layout="column"
-                      flex="50">
-                      <div layout="row">
-                        <div class="session-details-time" layout>
-                          <md-icon>today</md-icon>
-                          <p class="md-body-1">January 5, 2016</p>
+                  <div layout-xs="column" layout-gt-xs="column" layout-gt-md="row">
+
+                    <!-- Left column -->
+                    <div class="session-details-left-column"
+                      layout="column"
+                      flex-xs="100" flex-gt-xs="100" flex-gt-md="50">
+
+                      <!-- Date, time, location blocks -->
+                      <div layout="row" layout-wrap>
+                        <div class="session-details-block" 
+                          layout="row"
+                          flex-xs="50" flex-sm="50" flex-md="50">
+                          <p class="md-body-1"><md-icon>today</md-icon>January 5, 2016</p>
                         </div>
-                        <div class="session-details-time" layout>
-                          <md-icon>access_time</md-icon>
-                          <p class="md-body-1">6:30 PM</p>
+                        <div class="session-details-block" 
+                          layout="row"
+                          flex-xs flex-sm flex-md>
+                          <p class="md-body-1"><md-icon>access_time</md-icon>6:30 PM</p>
+                        </div>
+                        <div class="session-details-block" 
+                          layout="row"
+                          flex-xs="100" flex-sm="100" flex-md="100" flex>       
+                          <p class="md-body-1"><md-icon>location_on</md-icon>Blackhouse Mixed Martial Arts</p>
                         </div>
                       </div>
 
+                      <!-- Session hours block -->
                       <div layout="row" flex md-whiteframe="1" class="total-gi-hours-tile total-nogi-hours-tile session-details-hours">
                         <div layout="column" layout-align="center center" flex="33" class="total-gi-hours-tile-header">
                           <h4 class="md-display-1">NO</h4>
                           <h4 class="md-display-1">GI</h4>
                         </div>
                         <div layout="column" layout-align="center center" flex="66" class="total-gi-hours-tile-hours md-padding">
-                          <h1 class="md-display-4">1.5</h1>
+                          <h1 class="md-display-4" hide-xs>1.75</h1>
+                          <h1 class="md-display-3" hide-gt-xs>1.75</h1>
                           <h6>hours</h6>
                         </div>
                       </div>
 
+                      <!-- Technique tags block -->
+                      <div class="session-details-block" layout-padding>
+                        <h2 class="md-subhead">
+                          <md-icon>label_outline</md-icon>
+                          Technique tags
+                        </h2>
+                        <md-chips>
+                          <md-chip>Deep half-guard</md-chip>
+                          <md-chip>Mount</md-chip>
+                          <md-chip>De la riva</md-chip>
+                        </md-chips>
+                      </div>
                     </div>
+                    
+                  <!-- Right column -->
+                  <div class="session-details-right-column session-details-block"
+                    layout="column"
+                    flex-xs="100" flex-gt-xs="100" flex-gt-md="50">
 
-                    <div layout="column" layout-padding
-                      flex="50">
-                      <h2 class="md-title"><md-icon>label_outline</md-icon>Technique tags</h2>
-                      <md-chips>
-                        <md-chip>Hockey</md-chip>
-                        <md-chip>Lacrosse</md-chip>
-                        <md-chip>Baseball</md-chip>
-                      </md-chips>
+                    <!-- Session notes block -->
+                    <div>
+                      <h2 class="md-subhead"><md-icon>subject</md-icon>Notes</h2>
+                      <md-content class="md-padding session-details-notes">
+                        <p>
+                          Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.
+                        </p>
+                        <p>
+                          Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.
+                        </p>
+                      </md-content>
                     </div>
+                  </div>
+
+                  </div>
+
+                  <!-- Edit session button -->
+                  <div layout layout-align="start start">
+                    <md-button class="md-raised md-accent mt-no-margin"
+                      flex-xs>
+                      <md-icon>edit</md-icon>&nbsp;Edit
+                    </md-button>
                   </div>
                 </md-tab-body>
               </md-tab>
+
+              <!-- Edit session tab -->
               <md-tab id="edit">
                 <md-label><md-icon>edit</md-icon>Edit session</md-label>
                 <md-tab-body>
-                  xxvvv
+                  
+                  <!-- New session form -->
+                  <form role="form">
+                    <div layout-xs="column" layout-sm="column" layout="row">
+                      
+                      <!-- Left column -->
+                      <div layout="column" layout-margin
+                        flex-xs="100" flex-sm="100" flex="50">
+                        
+                        <!-- Date and time selection-->
+                        <div layout="row" layout-align="start start">
+                          <div flex>
+                            <h2 class="md-title">Date</h2>
+                            <md-datepicker ng-model="myDate" ng-required md-placeholder="Enter date"></md-datepicker>
+                          </div>
+                          <div flex style="background-color:aliceblue">
+                            <h2 class="md-title">Time</h2>
+                          </div>
+                        </div>
+                        
+                        <!-- Gi/nogi selection -->
+                        <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                          layout="row" layout-wrap 
+                          ng-model="ul.session.gi">
+                          <md-radio-button aria-label="Gi selection"
+                            layout="column" flex                  
+                            ng-value="true">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1 class="md-display-1">Gi</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="Gi selection"
+                            layout="column" flex                  
+                            ng-value="false" ng-checked="true">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1 class="md-display-1">Nogi</h1></md-button>
+                          </md-radio-button>
+                        </md-radio-group>
+
+                        <!-- Session length selection -->
+                        <h1 class="md-title">Session length</h1>
+                        <h2 class="md-subhead">Hours</h2>
+
+                        <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                          layout="row" layout-wrap 
+                          ng-model="ul.session.matTimeHours">
+                          <md-radio-button aria-label="1 hour"
+                            layout="column" flex                  
+                            ng-value="1">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1>1</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="2 hours"
+                            layout="column" flex                  
+                            ng-value="2">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1>2</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="3 hours"
+                            layout="column" flex                  
+                            ng-value="3">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1>3</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="4 hours"
+                            layout="column" flex                  
+                            ng-value="4">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1>4</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="5 hours"
+                            layout="column" flex                  
+                            ng-value="5">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1>5</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="6 hours"
+                            layout="column" flex                  
+                            ng-value="6">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1>6</h1></md-button>
+                          </md-radio-button>
+                        </md-radio-group>
+                        
+                        <h2 class="md-subhead">Minutes</h2>
+                        <md-radio-group md-no-ink class="mt-new-session-radio-group"
+                          layout="row" layout-wrap 
+                          ng-model="ul.session.matTimeMinutes">
+                          <md-radio-button aria-label="0 minutes"
+                            layout="column" flex                  
+                            ng-value="0">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1 class="md-title">0</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="15 minutes"
+                            layout="column" flex                  
+                            ng-value="0.25">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1 class="md-title">15</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="30 minutes"
+                            layout="column" flex                  
+                            ng-value="0.5">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1 class="md-title">30</h1></md-button>
+                          </md-radio-button>
+                          <md-radio-button aria-label="45 minutes"
+                            layout="column" flex                  
+                            ng-value="0.75">
+                            <md-button md-no-ink class="mt-new-session-buttons"><h1 class="md-title">45</h1></md-button>
+                          </md-radio-button>
+                        </md-radio-group>
+                      </div>
+
+                      <!-- Right column -->
+                      <div layout="column" layout-margin
+                        flex-xs="100" flex-sm="100" flex="50">
+
+                        <!-- Technique tags input -->
+                        <div>
+                          <h2 class="md-title">Technique tags</h2>
+                          <md-chips
+                                ng-model="ul.tags"
+                                md-separator-keys="ul.keys"
+                                placeholder="Enter a technique tag"
+                                secondary-placeholder="Comma seperated tags"></md-chips>
+                        </div>
+                        
+                        <!-- Notes text area -->
+                        <div>
+                          <h2 class="md-title">Notes</h2>
+                          <md-input-container class="md-block">
+                            <!-- <label>Session notes</label> -->
+                            <textarea ng-model="ul.session.notes" rows="7" md-select-on-focus></textarea>
+                          </md-input-container>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    
+                    <!-- Save button -->
+                    <div layout layout-align="start start" layout-margin>
+                      <md-button class="md-raised md-accent"
+                        flex-xs>Save</md-button>
+                    </div>
+                  </form>
+
                 </md-tab-body>
               </md-tab>
             </md-tabs>
