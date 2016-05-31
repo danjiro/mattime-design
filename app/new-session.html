@@ -132,22 +132,26 @@
     <md-content flex>
       <div layout-padding>
 
+        <!-- New session form -->
         <form role="form">
           <div layout-xs="column" layout-sm="column" layout="row">
-
+            
+            <!-- Left column -->
             <div layout="column" layout-margin
               flex-xs="100" flex-sm="100" flex="50">
               
+              <!-- Date and time selection-->
               <div layout="row" layout-align="start start">
                 <div flex>
-                  <h2 class="md-title">Date</h2>
+                  <h2 class="md-subhead">Date</h2>
                   <md-datepicker ng-model="myDate" ng-required md-placeholder="Enter date"></md-datepicker>
                 </div>
                 <div flex style="background-color:aliceblue">
-                  <h2 class="md-title">Time</h2>
+                  <h2 class="md-subhead">Time</h2>
                 </div>
               </div>
-
+              
+              <!-- Gi/nogi selection -->
               <md-radio-group md-no-ink class="mt-new-session-radio-group"
                 layout="row" layout-wrap 
                 ng-model="session.gi">
@@ -163,7 +167,8 @@
                 </md-radio-button>
               </md-radio-group>
 
-              <h1 class="md-title">Session length</h1>
+              <!-- Session length selection -->
+              <h1 class="md-subhead"><md-icon>timelapse</md-icon>Session length</h1>
               <h2 class="md-subhead">Hours</h2>
 
               <md-radio-group md-no-ink class="mt-new-session-radio-group"
@@ -228,29 +233,34 @@
               </md-radio-group>
             </div>
 
-
+            <!-- Right column -->
             <div layout="column" layout-margin
               flex-xs="100" flex-sm="100" flex="50">
+
+              <!-- Technique tags input -->
               <div>
-                <h2 class="md-title">Technique tags</h2>
+                <h2 class="md-subhead"><md-icon>label_outline</md-icon>Technique tags</h2>
                 <md-chips
                       ng-model="ul.tags"
                       md-separator-keys="ul.keys"
                       placeholder="Enter a technique tag"
                       secondary-placeholder="Comma seperated tags"></md-chips>
               </div>
-
+              
+              <!-- Notes text area -->
               <div>
-                <h2 class="md-title">Notes</h2>
+                <h2 class="md-subhead"><md-icon>subject</md-icon>Notes</h2>
                 <md-input-container class="md-block">
                   <!-- <label>Session notes</label> -->
                   <textarea ng-model="ul.notes" rows="7" md-select-on-focus></textarea>
                 </md-input-container>
               </div>
+
             </div>
 
           </div>
-
+          
+          <!-- Save button -->
           <div layout layout-align="start start" layout-margin>
             <md-button class="md-raised md-accent"
               flex-xs>Save</md-button>

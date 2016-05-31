@@ -1,16 +1,38 @@
 .site-sidenav {
     background-color: rgb(31, 33, 43);
 }
-.mt-timecard .md-menu { padding: 0px; }
+.mt-timecard .md-menu {
+    padding: 0px;
+}
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 {font-size: 36px;height: 36px;width: 36px;}
-.material-icons.md-48 { font-size: 48px; }
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+.material-icons.md-18 {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+}
+.material-icons.md-24 {
+    font-size: 24px;
+}
+.material-icons.md-36 {
+    font-size: 36px;
+    height: 36px;
+    width: 36px;
+}
+.material-icons.md-48 {
+    font-size: 48px;
+}
+.material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+}
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+.material-icons.md-light {
+    color: rgba(255, 255, 255, 1);
+}
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
 
 .mt-timecard .mt-timecard-content {
     background-color: rgba(0, 0, 0, 0.02);
@@ -54,13 +76,16 @@
     margin-right: 10px;
 }
 
-.user-menu .md-button:not([disabled]):hover {background: none;}
+.user-menu .md-button:not([disabled]):hover {
+    background: none;
+}
 
 .user-menu .mt-expand-icon {
     height: 27px;
 }
 
-.total-hours-tile-header.layout-align-start-start.layout-row {}
+.total-hours-tile-header.layout-align-start-start.layout-row {
+}
 
 .total-hours-tile-header .material-icons {
     margin: auto 5px auto 5px;
@@ -80,7 +105,9 @@ md-divider.md-light {
     padding: 0px;
 }
 
-.total-hours-tile md-divider {margin: 0px 8px;}
+.total-hours-tile md-divider {
+    margin: 0px 8px;
+}
 
 .total-hours-tile-hours h1 {
     color: rgba(255, 255, 255, 1.0);
@@ -117,14 +144,20 @@ md-divider.md-light {
     background-color: #6467AB;
 }
 
-.total-hours-tile-header {padding: 8px;}
+.total-hours-tile-header {
+    padding: 8px;
+}
 
 .total-gi-hours-tile-hours h1 {
     margin-bottom: 0px;
 }
 
-.md-no-padding {
+.mt-no-padding {
     padding: 0px;
+}
+
+.mt-no-margin {
+    margin: 0px;
 }
 
 .sidenav-user-container .mt-user-avatar {
@@ -207,7 +240,7 @@ md-divider.md-light {
 
 .mt-new-session-radio-group ._md-label {
     
-margin-left: -10px;
+    margin-left: -10px;
 }
 
 .mt-new-session-radio-group .mt-new-session-buttons {
@@ -228,4 +261,63 @@ margin-left: -10px;
 
 .mt-new-session-radio-group md-radio-button.md-checked .mt-new-session-buttons {
     background-color: #3F51B5;
+}
+
+md-icon.material-icons {
+    margin-right: 3px;
+}
+
+.session-details-block {
+    background-color: rgba(229, 229, 229, 0.46);
+    padding: 0px 15px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.session-details-hours {
+    margin-top: 8px;
+}
+
+.session-details-hours .total-gi-hours-tile-header h4 {
+    line-height: 30px;
+}
+
+.session-details-block:last-of-type {
+    margin-right: 0px;
+}
+
+.session-details-notes {
+    background-color: inherit;
+}
+
+.session-details-left-column, .session-details-right-column {
+    margin-bottom: 8px;
+}
+
+.session-details-right-column {
+    margin-left: 8px;
+}
+
+@media (max-width: 599px) {
+    .session-details-block {
+        margin-right: 8px;
+    }
+    .session-details-block:nth-of-type(2) {
+        margin-right: 0px;
+    }
+    .session-details-right-column {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 1279px) and (min-width: 600px) {
+    .session-details-block {
+        margin-right: 8px;
+    }
+    .session-details-block:nth-of-type(2) {
+        margin-right: 0px;
+    }
+    .session-details-right-column {
+        margin-left: 0px;
+    }
 }
