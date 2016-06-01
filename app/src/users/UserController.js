@@ -17,6 +17,71 @@
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $mdConstant) {
     var self = this;
 
+    self.members = [
+      {
+        name: "user1",
+        rank: "blue",
+        date: "March 3, 2015"
+      },
+      {
+        name: "user3",
+        rank: "white",
+        date: "March 6, 2016"
+      },
+      {
+        name: "user7",
+        rank: "purple",
+        date: "November 30, 2014"
+      },
+    ];
+    self.order = "index"
+    self.schools = [
+      {
+        name: "Dominance MMA",
+        members: 5,
+        address: "555 Victoria St, Abbotsford VIC 3067, Australia"
+      },
+      {
+        name: "Marcelo Garcia Academy / NYC Jiu-Jitsu",
+        members: 1,
+        address: "  250 West 26th Street, New York, NY 10001, United States"
+      },
+      {
+        name: "Art of Jiu Jitsu Academy",
+        members: 3,
+        address: "411 East 17th Street, Costa Mesa, CA 92627, United States"
+      },
+      {
+        name: "Dominance MMA",
+        members: 5,
+        address: "555 Victoria St, Abbotsford VIC 3067, Australia"
+      },
+      {
+        name: "Marcelo Garcia Academy / NYC Jiu-Jitsu",
+        members: 1,
+        address: "  250 West 26th Street, New York, NY 10001, United States"
+      },
+      {
+        name: "Art of Jiu Jitsu Academy",
+        members: 3,
+        address: "411 East 17th Street, Costa Mesa, CA 92627, United States"
+      },
+      {
+        name: "Dominance MMA",
+        members: 5,
+        address: "555 Victoria St, Abbotsford VIC 3067, Australia"
+      },
+      {
+        name: "Marcelo Garcia Academy / NYC Jiu-Jitsu",
+        members: 1,
+        address: "  250 West 26th Street, New York, NY 10001, United States"
+      },
+      {
+        name: "Art of Jiu Jitsu Academy",
+        members: 3,
+        address: "411 East 17th Street, Costa Mesa, CA 92627, United States"
+      }
+    ];
     self.session = {
       gi: false,
       matTimeHours: 1,
