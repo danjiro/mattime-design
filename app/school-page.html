@@ -78,7 +78,6 @@
 
   </md-sidenav>
 
-
   <div flex layout="column" tabIndex="-1" role="main">
 
     <!-- Header toolbar -->
@@ -133,123 +132,215 @@
     <md-content flex>
       <div class="md-padding">
 
-        <div layout="row">
-          <md-card flex="auto">
-            <!-- User list table -->        
-            <md-table-container>
-              <table md-table>
-                <!-- Table head ordering by index -->        
-                <thead md-head md-order="ul.order">
-                  <tr md-row>
-                    <th md-column md-numeric>
-                      <md-icon>format_list_numbered</md-icon>
-                    </th>
-                    <th md-column md-order-by="name">
-                      <span>
-                        <md-icon>location_on</md-icon>
-                        Name
-                      </span>
-                    </th>
-                    <th md-column md-order-by="members">
-                      <span>
-                        <md-icon>people</md-icon>
-                        Rank
-                      </span>
-                    </th>
-                    <th md-column hide-xs>
-                      <span>
-                        <md-icon>location_searching</md-icon>
-                        Join date
-                      </span>
-                    </th>
-                  </tr>
-                </thead>
-                <!-- Table rows -->        
-                <tbody md-body>
-                  <tr md-row ng-repeat="user in ul.members | orderBy: ul.order">
-                    <td md-cell>{{$index + 1}}</td>
-                    <td md-cell> <strong>{{user.name}}</strong>
-                    </td>
-                    <td md-cell>
-                      <md-icon class="avatar-belt {{user.rank}}-belt" md-svg-icon="belts:no-stripe"></md-icon>
-                    </td>
-                    <td md-cell hide-xs>{{user.date}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </md-table-container>
-          </md-card>
+        <div layout-xs="column" layout="row">
+          <!-- User list table -->          
+          <div flex-gt-md="66" flex="100">
+            <!-- School info card mobile-->
+            <div hide-gt-md flex="100">
+              <md-card>        
+                <md-card-content>
+                  <md-card-actions layout="row">
+                    <div class="md-margin" layout="row" layout-align="start center" flex>
+                      <span class="md-body-2">Marcelo Garcia Academy / NYC Jiu-Jitsu</span>
+                    </div>
+                    <div layout="row">
+                      <md-button class="md-raised" ng-click="ul.toggleSchoolInfo()" aria-label="More info">
+                        <md-icon>info</md-icon>
+                        More info
+                      </md-button>
+                    </div>
+                  </md-card-actions>
+                </md-card-content>
+              </md-card>
+            </div>
+            <md-card>
+              <md-table-container>
+                <table md-table>
+                  <!-- Table head ordering by index -->          
+                  <thead md-head md-order="ul.order">
+                    <tr md-row>
+                      <th md-column>
+                        <md-icon>format_list_numbered</md-icon>
+                      </th>
+                      <th md-column md-order-by="name">
+                        <span>
+                          <md-icon>location_on</md-icon>
+                          Name
+                        </span>
+                      </th>
+                      <th md-column md-order-by="members">
+                        <span>
+                          <md-icon>people</md-icon>
+                          Rank
+                        </span>
+                      </th>
+                      <th md-column hide-xs>
+                        <span>
+                          <md-icon>location_searching</md-icon>
+                          Join date
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <!-- Table rows -->          
+                  <tbody md-body>
+                    <tr md-row ng-repeat="user in ul.members | orderBy: ul.order">
+                      <td md-cell>{{$index + 1}}</td>
+                      <td md-cell> <strong>{{user.name}}</strong>
+                      </td>
+                      <td md-cell>
+                        <md-icon class="avatar-belt {{user.rank}}-belt" md-svg-icon="belts:no-stripe"></md-icon>
+                      </td>
+                      <td md-cell hide-xs>{{user.date}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+            </md-card>
+          </div>
+          <!-- School info card -->
+          <div hide show-gt-md flex="33">
+            <md-card>
+              <!-- School name and website -->
+              <md-card-header>
+                <md-card-avatar>
+                  <md-icon>school</md-icon>
+                </md-card-avatar>
+                <md-card-header-text>
+                  <span class="md-title">Marcelo Garcia Academy / NYC Jiu-Jitsu</span>
+                  <span class="md-subhead">
+                    <a href="http://www.marcelogarciajj.com/" target="_blank">http://www.marcelogarciajj.com/</a>
+                  </span>
+                </md-card-header-text>
+              </md-card-header>
+              <!-- google maps embed -->
+              <img ng-src="http://placehold.it/800x500/?text=map" class="md-card-image" alt="Map">
+              <!-- School info -->          
+              <md-card-content>
+                <md-list class="md-dense" flex>
+                  <md-list-item>
+                    <md-icon>location_on</md-icon>
+                    <div class="md-list-item-text">
+                      <p class="md-body-1">250 West 26th Street, New York, NY 10001, United States</p>
+                    </div>
+                  </md-list-item>
+                  <md-list-item>
+                    <md-icon>phone</md-icon>
+                    <div class="md-list-item-text">
+                      <p class="md-body-1">(212) 414-0044</p>
+                    </div>
+                  </md-list-item>
+                  <md-list-item>
+                    <md-icon>access_time</md-icon>
+                    <div class="md-list-item-text">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="md-body-1">Monday</td>
+                            <td class="md-body-1">7am–10pm</td>
+                          </tr>
+                          <tr>
+                            <td class="md-body-1">Tuesday</td>
+                            <td class="md-body-1">7am–10pm</td>
+                          </tr>
+                          <tr>
+                            <td class="md-body-1">Wednesday</td>
+                            <td class="md-body-1">7am–10pm</td>
+                          </tr>
+                          <tr>
+                            <td class="md-body-1">Thursday</td>
+                            <td class="md-body-1">7am–10pm</td>
+                          </tr>
+                          <tr>
+                            <td class="md-body-1">Friday</td>
+                            <td class="md-body-1">7am–10pm</td>
+                          </tr>
+                          <tr>
+                            <td class="md-body-1">Saturday</td>
+                            <td class="md-body-1">10:30am–1:30pm</td>
+                          </tr>
+                          <tr>
+                            <td class="md-body-1">Sunday</td>
+                            <td class="md-body-1">10:30am–12:30pm</td>
+                          </tr>
+                        </tbody>
+                      </table>
 
-          <md-card flex="33">
-            <md-card-header>
-              <md-card-avatar>
-                <md-icon>school</md-icon>
-              </md-card-avatar>
-              <md-card-header-text>
-                <span class="md-title">Marcelo Garcia Academy / NYC Jiu-Jitsu</span>
-                <span class="md-subhead"><a href="http://www.marcelogarciajj.com/" target="_blank">http://www.marcelogarciajj.com/</a></span>
-              </md-card-header-text>
-            </md-card-header>
-            <img ng-src="http://placehold.it/600x400/?text=map" class="md-card-image" alt="Map">
-            <md-card-content>
-              <md-list class="md-dense" flex>
-                <md-list-item>
-                  <md-icon>location_on</md-icon>
-                  <div class="md-list-item-text">
-                    <p class="md-body-1">250 West 26th Street, New York, NY 10001, United States</p>
-                  </div>
-                </md-list-item>
-                <md-list-item>
-                  <md-icon>phone</md-icon>
-                  <div class="md-list-item-text">
-                    <p class="md-body-1">(212) 414-0044</p>
-                  </div>
-                </md-list-item>
-                <md-list-item>
-                  <md-icon>access_time</md-icon>
-                  <div class="md-list-item-text">
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td class="md-body-1">Monday</td>
-                          <td class="md-body-1">7am–10pm</td>
-                        </tr>
-                        <tr>
-                          <td class="md-body-1">Tuesday</td>
-                          <td class="md-body-1">7am–10pm</td>
-                        </tr>
-                        <tr>
-                          <td class="md-body-1">Wednesday</td>
-                          <td class="md-body-1">7am–10pm</td>
-                        </tr>
-                        <tr>
-                          <td class="md-body-1">Thursday</td>
-                          <td class="md-body-1">7am–10pm</td>
-                        </tr>
-                        <tr>
-                          <td class="md-body-1">Friday</td>
-                          <td class="md-body-1">7am–10pm</td>
-                        </tr>
-                        <tr>
-                          <td class="md-body-1">Saturday</td>
-                          <td class="md-body-1">10:30am–1:30pm</td>
-                        </tr>
-                        <tr>
-                          <td class="md-body-1">Sunday</td>
-                          <td class="md-body-1">10:30am–12:30pm</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                  </div>
-                </md-list-item>
-              </md-list>
-            </md-card-content>
-          </md-card>
+                    </div>
+                  </md-list-item>
+                </md-list>
+              </md-card-content>
+            </md-card>
+          </div>
         </div>
 
       </div> <!-- md-content container -->
     </md-content>
+    
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="schoolInfo">
+      <md-content>
+        <md-list class="md-dense" layout="column" flex>
+          <md-list-item class="md-2-line">
+            <md-icon>school</md-icon>
+            <div class="md-list-item-text">
+              <h3>Marcelo Garcia Academy / NYC Jiu-Jitsu</h3>
+              <a href="http://www.marcelogarciajj.com/" target="_blank"><p>http://www.marcelogarciajj.com/</p></a>
+            </div>
+          </md-list-item>
+          <img ng-src="http://placehold.it/800x500/?text=map" style="width:100%;" alt="Map">
+          <md-list-item>
+            <md-icon>location_on</md-icon>
+            <div class="md-list-item-text">
+              <p class="md-body-1">250 West 26th Street, New York, NY 10001, United States</p>
+            </div>
+          </md-list-item>
+          <md-list-item>
+            <md-icon>phone</md-icon>
+            <div class="md-list-item-text">
+              <p class="md-body-1">(212) 414-0044</p>
+            </div>
+          </md-list-item>
+          <md-list-item>
+            <md-icon>access_time</md-icon>
+            <div class="md-list-item-text">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="md-body-1">Monday</td>
+                    <td class="md-body-1">7am–10pm</td>
+                  </tr>
+                  <tr>
+                    <td class="md-body-1">Tuesday</td>
+                    <td class="md-body-1">7am–10pm</td>
+                  </tr>
+                  <tr>
+                    <td class="md-body-1">Wednesday</td>
+                    <td class="md-body-1">7am–10pm</td>
+                  </tr>
+                  <tr>
+                    <td class="md-body-1">Thursday</td>
+                    <td class="md-body-1">7am–10pm</td>
+                  </tr>
+                  <tr>
+                    <td class="md-body-1">Friday</td>
+                    <td class="md-body-1">7am–10pm</td>
+                  </tr>
+                  <tr>
+                    <td class="md-body-1">Saturday</td>
+                    <td class="md-body-1">10:30am–1:30pm</td>
+                  </tr>
+                  <tr>
+                    <td class="md-body-1">Sunday</td>
+                    <td class="md-body-1">10:30am–12:30pm</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </md-list-item>
+        </md-list>
+      </md-content>
+    </md-sidenav>
 
   </div> 
 

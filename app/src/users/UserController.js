@@ -33,6 +33,36 @@
         rank: "purple",
         date: "November 30, 2014"
       },
+      {
+        name: "user1",
+        rank: "blue",
+        date: "March 3, 2015"
+      },
+      {
+        name: "user3",
+        rank: "white",
+        date: "March 6, 2016"
+      },
+      {
+        name: "user7",
+        rank: "purple",
+        date: "November 30, 2014"
+      },
+      {
+        name: "user1",
+        rank: "blue",
+        date: "March 3, 2015"
+      },
+      {
+        name: "user3",
+        rank: "white",
+        date: "March 6, 2016"
+      },
+      {
+        name: "user7",
+        rank: "purple",
+        date: "November 30, 2014"
+      }
     ];
     self.order = "index"
     self.schools = [
@@ -91,6 +121,7 @@
     self.keys = [186, 188, 13];
     self.tags = ['Deep half', 'Reverse De la riva'];
     self.notes = "";
+    self.toggleSchoolInfo = toggleSchoolInfo;
     self.selected     = null;
     self.users        = [ ];
     self.selectUser   = selectUser;
@@ -115,6 +146,13 @@
      */
     function toggleUsersList() {
       $mdSidenav('left').toggle();
+    }
+
+    /**
+     * Hide or Show the 'right' school info area
+     */
+    function toggleSchoolInfo() {
+      $mdSidenav('schoolInfo').toggle();
     }
 
     /**
