@@ -304,6 +304,12 @@ md-icon.material-icons {
     margin-left: 8px;
 }
 
+.md-button.md-raised.login-signup-button {
+    /* background-color: rgba(50, 176, 50, 0.82); */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .md-button.md-raised:not([disabled]).login-signup-button {
     /* background-color: rgba(50, 176, 50, 0.82); */
     color: rgba(255, 255, 255, 0.9);

@@ -53,11 +53,14 @@
           flex="100" flex-sm="50" flex-md="40" flex-gt-md="25">
         <md-card md-whiteframe="2">
           <md-card-content>
+            <!-- Form header logo -->
             <div class="md-padding"
                 layout="column" layout-align="center stretch">
               <md-icon class="md-72 login-signup-logo" md-svg-icon="svg-10"></md-icon>
             </div>
+            <!-- Form inputs -->
             <form name="login">
+              <!-- Email input -->
               <md-input-container class="md-block">
                 <label>Email</label>
                 <input required type="email" name="email" 
@@ -66,6 +69,7 @@
                   <div ng-message="required">Email is required to login.</div>
                 </div>
               </md-input-container>
+              <!-- Password input -->
               <md-input-container class="md-block">
                 <label>Password</label>
                 <input required type="password" name="password" 
@@ -75,10 +79,12 @@
                 </div>
               </md-input-container>
             </form>
+            <!-- Login button -->
             <div layout="column">
-              <md-button class="md-raised login-signup-button md-primary">Login</md-button>
+              <md-button class="md-raised login-signup-button md-primary" ng-disabled="login.$invalid">Login</md-button>
             </div>
             <md-divider></md-divider>
+            <!-- Social login buttons -->
             <div layout="column">
               <md-button class="md-raised login-signup-button login-signup-facebook">
                 <div layout>
@@ -97,6 +103,7 @@
             </div>
           </md-card-content>
         </md-card>
+        <!-- Alternative buttons -->
         <div class="md-margin md-padding"
             layout="row" layout-align="center center">
           <div class="or-divider" flex="30">
