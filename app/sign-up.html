@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css">
+    <link rel="stylesheet" href="assets/app.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
+  </head>
+
+  <body ng-app="starterApp" layout="row" ng-controller="UserController as ul" ng-cloak>
+
+  <div flex layout="column" tabIndex="-1" role="main" style="">
+
+    <!-- Header toolbar -->
+    <md-toolbar md-whiteframe="3" class="">
+      <div class="md-toolbar-tools">
+        <h3> <span>MT</span> </h3> 
+        <span flex></span>
+        <md-button class="md-raised md-accent" aria-label="Sign up">
+          Sign up
+        </md-button>
+        <md-button aria-label="Login">
+          Login
+        </md-button>
+      </div>
+    </md-toolbar>
+
+
+    <!-- Content area -->
+    <md-content class="login-signup-form md-padding"
+          layout="row" layout-align-gt-sm="center center" layout-align="center start"
+          flex>
+
+      <div layout="column" 
+          flex="100" flex-sm="50" flex-md="40" flex-gt-md="25">
+        <md-card md-whiteframe="2">
+          <md-card-content>
+            <div class="md-padding"
+                layout="column" layout-align="center stretch">
+              <md-icon class="md-72 login-signup-logo" md-svg-icon="svg-10"></md-icon>
+            </div>
+            <form name="signup">
+              <md-input-container class="md-block">
+                <label>Username</label>
+                <input required name="username" md-maxlength="20"
+                        ng-model="username" ng-pattern="" />    
+                <div ng-messages="signup.username.$error">
+                  <div ng-message="required">Username is required to sign up.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block">
+                <label>Email</label>
+                <input required type="email" name="email" 
+                        ng-model="email" ng-pattern="/^.+@.+\..+$/" />    
+                <div ng-messages="signup.email.$error">
+                  <div ng-message="required">Email is required to sign up.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block">
+                <label>Password</label>
+                <input required type="password" name="password" 
+                        ng-model="password" />    
+                <div ng-messages="signup.password.$error">
+                  <div ng-message="required">Password is required to signup.</div>
+                </div>
+              </md-input-container>
+            </form>
+            <div layout="column">
+              <md-button class="md-raised login-signup-button md-primary">Sign up</md-button>
+            </div>
+            <md-divider></md-divider>
+            <div layout="column">
+              <md-button class="md-raised login-signup-button login-signup-facebook">
+                <div layout>
+                  <md-icon md-svg-icon="social:facebook"></md-icon>
+                  <span flex>Sign up with facebook</span>
+                </div>
+              </md-button>
+            </div>
+            <div layout="column">
+              <md-button class="md-raised login-signup-button login-signup-google">
+                <div layout>
+                  <md-icon md-svg-icon="social:google"></md-icon>
+                  <span flex>Sign up with Google</span>
+                </div>
+              </md-button>
+            </div>
+          </md-card-content>
+        </md-card>
+        <div class="md-margin md-padding"
+            layout="row" layout-align="center center">
+          <div class="or-divider" flex="30">
+            <md-divider></md-divider>
+            <span class="md-body-2">or</span>
+          </div>
+        </div>
+        <md-button class="login-signup-outline-button">Login</md-button>
+      </div>
+
+    </md-content>
+
+  </div> 
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
+
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UserController.js"></script>
+    <script src="./src/users/UserService.js"></script>
+
+    <script type="text/javascript">
+
+          angular
+              .module('starterApp', ['ngMaterial', 'users'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512)
+                      .iconSet("belts", "./assets/svg/belts.svg", 512)
+                      .iconSet("social", "./assets/svg/social.svg", 24);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('indigo', {
+                            // 'default': '800'
+                          })
+                          .accentPalette('blue', {
+                            // 'default': '200'
+                          });
+
+              });
+
+    </script>
+
+  </body>
+</html>
