@@ -5,21 +5,30 @@
     padding: 0px;
 }
 
-.material-icons.md-18 {
+.md-18 {
     font-size: 18px;
     height: 18px;
     width: 18px;
 }
-.material-icons.md-24 {
+.md-24 {
     font-size: 24px;
+    height: 24px;
+    width: 24px;
 }
-.material-icons.md-36 {
+.md-36 {
     font-size: 36px;
     height: 36px;
     width: 36px;
 }
-.material-icons.md-48 {
+.md-48 {
     font-size: 48px;
+    height: 48px;
+    width: 48px;
+}
+.md-72 {
+    font-size: 72px;
+    height: 72px;
+    width: 72px;
 }
 .material-icons.md-dark {
     color: rgba(0, 0, 0, 0.54);
@@ -82,9 +91,6 @@
 
 .user-menu .mt-expand-icon {
     height: 27px;
-}
-
-.total-hours-tile-header.layout-align-start-start.layout-row {
 }
 
 .total-hours-tile-header .material-icons {
@@ -298,6 +304,17 @@ md-icon.material-icons {
     margin-left: 8px;
 }
 
+.md-button.md-raised:not([disabled]).login-signup-button {
+    /* background-color: rgba(50, 176, 50, 0.82); */
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.md-button.md-raised:not([disabled]).login-signup-button:hover {
+    /* background-color: rgba(50, 176, 50, 0.9); */
+}
+
 @media (max-width: 599px) {
     .session-details-block {
         margin-right: 8px;
@@ -320,4 +337,67 @@ md-icon.material-icons {
     .session-details-right-column {
         margin-left: 0px;
     }
+}
+
+
+
+.login-signup-form md-card md-divider {
+    margin: 24px 0px;
+}
+
+.md-button.md-raised:not([disabled]).login-signup-button.login-signup-facebook {
+    background-color: rgb(59,89,152);
+}
+
+.md-button.md-raised:not([disabled]).login-signup-button.login-signup-facebook:hover {
+    background-color: rgb(52,78,134);
+}
+
+.md-button.md-raised:not([disabled]).login-signup-button.login-signup-google {
+    background-color: rgb(220, 78, 65);
+}
+
+.md-button.md-raised:not([disabled]).login-signup-button.login-signup-google:hover {
+    background-color: rgb(218, 71, 57);
+}
+
+.md-button:not([disabled]).login-signup-outline-button {
+    border: 2px solid rgba(0, 0, 0, 0.21);
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.md-button:not([disabled]).login-signup-outline-button:hover {
+    
+}
+
+.md-button:not([disabled]).toolbar-signup {
+    /* border: 2px solid rgba(255, 255, 255, 0.8); */
+}
+
+.md-button:not([disabled]).toolbar-signup:hover {
+    
+}
+
+.or-divider {
+    text-align: center;
+}
+
+.or-divider span {
+    margin-top: -11px;
+    display: block;
+    background-color: #FAFAFA;
+    width: 24px;
+    margin: -13px auto;
+}
+
+
+.login-signup-logo {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -69px;
+}
+
+.login-signup-form {
+    padding-top: 50px;
+    background: -webkit-linear-gradient(top, rgba(24, 86, 148, 0) 47%, #FAFAFA 40%);
 }
