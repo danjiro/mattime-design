@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css">
+    <link rel="stylesheet" href="assets/app.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style type="text/css">
+        /**
+         * Hide when Angular is not yet loaded and initialized
+         */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+
+  </head>
+
+  <body ng-app="starterApp" layout="row" ng-controller="UserController as ul" ng-cloak >
+
+  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+      md-component-id="left"
+      ng-click="ul.toggleList()" aria-label="Show User List"
+      md-is-locked-open="$mdMedia('gt-sm')">
+
+    <!-- Sidenav user header -->  
+    <div class="sidenav-user-container" 
+      layout="column" layout-align="center center" layout-margin>
+
+      <img src="http://www.placehold.it/400x400" alt="Avatar" md-whiteframe="1" class="mt-user-avatar">
+      <h1 class="md-title mt-light">Mantis Tobogan</h1>
+      <!-- <md-icon class="avatar-belt blue-belt" md-svg-icon="belts:no-stripe"></md-icon> -->
+
+    </div>
+
+    <md-divider></md-divider>
+
+    <!-- Sidenav menu list -->
+    <md-list class="sidenav-menu mt-light">
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">dashboard</md-icon>
+        <p>Dashboard</p>
+      </md-list-item>
+      <md-list-item class="active" ng-click="null">
+        <md-icon class="md-light md-avatar-icon">note_add</md-icon>
+        <p>New session</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">view_comfy</md-icon>
+        <p>Sessions</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">fitness_center</md-icon>
+        <p>Goals</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">show_chart</md-icon>
+        <p>Stats</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">school</md-icon>
+        <p>Schools</p>
+      </md-list-item>
+      <md-list-item ng-click="null">
+        <md-icon class="md-light md-avatar-icon">label</md-icon>
+        <p>Tags</p>
+      </md-list-item>
+    </md-list>
+
+  </md-sidenav>
+
+
+  <div flex layout="column" tabIndex="-1" role="main">
+
+    <!-- Header toolbar -->
+    <md-toolbar md-whiteframe="3" class="md-tall mt-header">
+      <div class="md-toolbar-tools">
+
+        <!-- Menu button -->
+        <md-button id="main" class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+          <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <h3> <span>MT</span> </h3>
+        
+        <span flex></span>
+
+        <!-- User menu area -->
+        <md-menu md-position-mode="target-right target" md-offset="-10 60" class="user-menu">
+          <md-button md-no-ink="true" ng-click="$mdOpenMenu($event)" aria-label="Open user menu">
+            <md-icon md-svg-icon="svg-10" class="md-avatar" aria-label="Profile photo"></md-icon>
+            <span hide-xs>Mantis Tobogan</span>
+            <md-icon class="mt-expand-icon">expand_more</md-icon>
+          </md-button>
+          <md-menu-content width="3">
+            <md-menu-item>
+              <md-button><md-icon>person</md-icon>Profile</md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button><md-icon>settings</md-icon>Settings</md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button><md-icon>power_settings_new</md-icon>Logout</md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+
+      </div>
+
+      <span flex></span>
+
+      <!-- Breadcrumbs toolbar -->
+      <div class="md-toolbar-tools md-toolbar-tools-bottom breadcrumbs-toolbar">
+        <i class="material-icons">settings</i><h2><span>&nbsp;Setup</span></h2>
+        <div class="quick-add">
+          <md-button class="md-fab md-accent" aria-label="Quick Add">
+            <i class="material-icons">add</i>
+          </md-button>
+        </div>
+      </div>
+    </md-toolbar>
+
+
+    <!-- Content area -->
+    <md-content flex>
+      <div layout-padding>
+
+        <md-tabs class="mt-no-padding" 
+          md-dynamic-height md-center-tabs md-swipe-content md-selected="ul.selectedStep">
+
+          <!-- Step 1 tab -->
+          <md-tab id="step-1">
+            <md-tab-label>Step 1</md-tab-label>
+            <md-tab-body>
+              <div class="md-padding"
+                layout="row" layout-align="center center">
+                <md-card class="mt-no-margin"
+                  flex-gt-sm="60" flex="100">
+                  <md-card-content>
+                    <div class="">
+
+                      <!-- Intro -->
+                      <h2 class="md-subhead">Before starting, let's setup your profile in these few quick steps. If you want to skip this for now, you can go straight to your <a href="#dashboard">dashboard</a> and come back to this later by going into "settings" under your user menu.</h2>
+                      <md-divider></md-divider>
+                      <!-- Update profile photo -->
+                      <div class="md-padding"
+                        layout="column" layout-align="center center" layout-margin>
+                        <h1 class="md-title">
+                          If you don't have a profile photo, let's add one:
+                        </h1>
+                        <span><md-icon class="md-144">account_circle</md-icon></span>
+                        <md-button class="md-raised">Change profile photo</md-button>
+                      </div>
+                      <md-divider></md-divider>
+                      <!-- Setup school -->
+                      <div class="md-padding"
+                        layout="column" layout-align="center stretch" layout-margin>
+                        <h1 class="md-title">Which school do you train at?</h1>
+                        <p class="md-body-1">
+                          Your school must be listed with Google to be saved. Selecting a school will add you to the school's public members list. You can update your school at anytime.
+                        </p>
+                        <form name="setup">
+                          <md-input-container class="md-block">
+                            <label for="school">Your school</label>
+                            <input name="school"></md-input-container>
+                        </form>
+                      </div>
+
+                    </div>
+                    <!-- Setup navigation buttons -->
+                    <md-card-actions layout="row" layout-align="end center">
+                      <md-button ng-click="ul.nextStep()">Skip</md-button>
+                      <md-button class="md-raised md-accent" ng-click="ul.nextStep()">Next</md-button>
+                    </md-card-actions>
+                  </md-card-content>
+                </md-card>
+              </div>
+            </md-tab-body>
+          </md-tab>
+
+          <!-- Step 2 tab -->
+          <md-tab id="step-2">
+            <md-label>Step 2</md-label>
+            <md-tab-body>
+              <div class="md-padding"
+                layout="row" layout-align="center center">
+                <md-card class="mt-no-margin"
+                  flex-gt-sm="90" flex="100">
+                  <md-card-content>
+                    <div class="">
+
+                      <!-- Setup school -->
+                      <div class="md-padding"
+                        layout="column" layout-align="center stretch">
+                        <h1 class="md-title">What is your rank?</h1>
+                        <form name="setup">
+                          <md-radio-group ng-model="setup.rank">
+                            <div layout="row" layout-wrap>
+                              <md-radio-button ng-repeat="belt in ul.belts" 
+                                flex="50" flex-gt-xs="20" 
+                                value="{{belt.color}}-{{belt.stripes}}" 
+                                aria-label="{{belt.color}} belt {{belt.stripes}} stripes">
+                                <md-icon class="{{belt.color}}-belt md-72" md-svg-icon="belts:no-stripe"></md-icon>
+                              </md-radio-button>
+                            </div>
+                          </md-radio-group>
+                        </form>
+                      </div>
+
+                    </div>
+                    <!-- Setup navigation buttons -->
+                    <md-card-actions layout="row" layout-align="start center">
+                      <md-button class="md-icon-button" ng-click="ul.backStep()">
+                        <md-icon>arrow_back</md-icon>
+                      </md-button>
+                      <span flex></span>
+                      <md-button ng-click="ul.nextStep()">Skip</md-button>
+                      <md-button class="md-raised md-accent" ng-click="ul.nextStep()">Next</md-button>
+                    </md-card-actions>
+                  </md-card-content>
+                </md-card>
+              </div>
+            </md-tab-body>
+          </md-tab>
+
+          <!-- Step 3 tab -->
+          <md-tab id="step-3">
+            <md-label>Step 3</md-label>
+            <md-tab-body>
+              <div class="md-padding"
+                layout="row" layout-align="center center">
+                <md-card class="mt-no-margin"
+                  flex-gt-sm="70" flex="100">
+                  <md-card-content>
+                    <div class="">
+
+                      <!-- Setup school -->
+                      <div class="md-padding"
+                        layout="column" layout-align="center stretch" layout-margin>
+                        <h1 class="md-title">Already put in some mattime?</h1>
+                        <p class="md-body-1">
+                          If you've already spent some time on the mats, let's (roughly) calculate your hours. New session hours will be added onto this. Otherwise, you can leave these as is.
+                        </p>
+                        <div layout="row" layout-align="space-between center">
+                          <div class="" flex="45">
+                            <h1 class="md-title">GI</h1>
+                            <form name="setup">
+                              <md-input-container class="md-block">
+                                <label for="gi-hours">How many hours have you trained GI?</label>
+                                <input type="number" name="gi-hours"></md-input-container>
+                            </form>
+                          </div>
+                          <div class="" flex="45">
+                            <h1 class="md-title">NO GI</h1>
+                            <form name="setup">
+                              <md-input-container class="md-block">
+                                <label for="nogi-hours">How many hours have you trained NOGI?</label>
+                                <input type="number" name="nogi-hours"></md-input-container>
+                            </form>
+                          </div>
+                        </div>
+                          <p class="md-caption">
+                            One way to calculate your existing hours: Average hours training GI a week * (number of weeks you've been training - number of weeks taken off for injuries/breaks).</p>
+                            <p class="md-caption">Eg: If you have been training for 2.5 years and train an average of 4 hours of GI a week: <code>4(hours/week) * (52(weeks in a year) * 2.5(years trained) - (3[average time off] * 2.5[years trained])) = 490 hours</code> </p>
+                          
+                      </div>
+
+                    </div>
+                    <!-- Setup navigation buttons -->
+                    <md-card-actions layout="row" layout-align="start center">
+                      <md-button class="md-icon-button" ng-click="ul.backStep()">
+                        <md-icon>arrow_back</md-icon>
+                      </md-button>
+                      <span flex></span>
+                      <md-button ng-click="ul.nextStep()">Skip</md-button>
+                      <md-button class="md-raised md-accent" ng-click="ul.nextStep()">Next</md-button>
+                    </md-card-actions>
+                  </md-card-content>
+                </md-card>
+              </div>
+            </md-tab-body>
+          </md-tab>
+
+        </md-tabs>
+
+      </div> <!-- md-content container -->
+    </md-content>
+
+  </div> 
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
+
+    <script src="./src/users/Users.js"></script>
+    <script src="./src/users/UserController.js"></script>
+    <script src="./src/users/UserService.js"></script>
+
+    <script type="text/javascript">
+
+          angular
+              .module('starterApp', ['ngMaterial', 'users'])
+              .config(function($mdThemingProvider, $mdIconProvider){
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512)
+                      .iconSet("belts", "./assets/svg/belts.svg", 512);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('indigo', {
+                            // 'default': '800'
+                          })
+                          .accentPalette('blue', {
+                            // 'default': '200'
+                          });
+
+              });
+
+    </script>
+
+  </body>
+</html>

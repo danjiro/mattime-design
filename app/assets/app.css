@@ -5,31 +5,37 @@
     padding: 0px;
 }
 
-.md-18 {
+.md-18, .material-icons.md-18 {
     font-size: 18px;
     height: 18px;
     width: 18px;
 }
-.md-24 {
+.md-24, .material-icons.md-24 {
     font-size: 24px;
     height: 24px;
     width: 24px;
 }
-.md-36 {
+.md-36, .material-icons.md-36 {
     font-size: 36px;
     height: 36px;
     width: 36px;
 }
-.md-48 {
+.md-48, .material-icons.md-48 {
     font-size: 48px;
     height: 48px;
     width: 48px;
 }
-.md-72 {
+.md-72, .material-icons.md-72 {
     font-size: 72px;
     height: 72px;
     width: 72px;
 }
+.md-144, .material-icons.md-144 {
+    font-size: 144px;
+    height: 144px;
+    width: 144px;
+}
+
 .material-icons.md-dark {
     color: rgba(0, 0, 0, 0.54);
 }
@@ -222,12 +228,6 @@ md-divider.md-light {
 
 .sidenav-menu .active {
     background-color: rgba(158,158,158,0.2);
-}
-
-.material-icons.md-72 {
-    font-size: 72px;
-    height: 72px;
-    width: 72px;
 }
 
 .mt-new-session-radio-group .material-icons {

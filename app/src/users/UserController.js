@@ -17,6 +17,36 @@
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $mdConstant) {
     var self = this;
 
+    self.selectedStep = 2;
+    self.nextStep = nextStep;
+    self.backStep = backStep;
+    self.belts = [
+      { color: "white", stripes: 0 },
+      { color: "white", stripes: 1 },
+      { color: "white", stripes: 2 },
+      { color: "white", stripes: 3 },
+      { color: "white", stripes: 4 },
+      { color: "blue", stripes: 0 },
+      { color: "blue", stripes: 1 },
+      { color: "blue", stripes: 2 },
+      { color: "blue", stripes: 3 },
+      { color: "blue", stripes: 4 },
+      { color: "purple", stripes: 0 },
+      { color: "purple", stripes: 1 },
+      { color: "purple", stripes: 2 },
+      { color: "purple", stripes: 3 },
+      { color: "purple", stripes: 4 },
+      { color: "brown", stripes: 0 },
+      { color: "brown", stripes: 1 },
+      { color: "brown", stripes: 2 },
+      { color: "brown", stripes: 3 },
+      { color: "brown", stripes: 4 },
+      { color: "black", stripes: 0 },
+      { color: "black", stripes: 1 },
+      { color: "black", stripes: 2 },
+      { color: "black", stripes: 3 },
+      { color: "black", stripes: 4 }
+    ];
     self.members = [
       {
         name: "user1",
@@ -140,6 +170,17 @@
     // *********************************
     // Internal methods
     // *********************************
+
+    /**
+     * Go to next step, go back a step
+     */
+    function nextStep() {
+      self.selectedStep++;
+    }
+
+    function backStep() {
+      self.selectedStep--;
+    }
 
     /**
      * Hide or Show the 'left' sideNav area
