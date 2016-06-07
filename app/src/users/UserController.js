@@ -17,7 +17,11 @@
   function UserController( userService, $mdSidenav, $mdBottomSheet, $log, $mdConstant) {
     var self = this;
 
-    self.selectedStep = 2;
+    self.setup = {
+      baseMatTimeGi: 0,
+      baseMatTimeNoGi: 0
+    };
+    self.selectedStep = 0;
     self.nextStep = nextStep;
     self.backStep = backStep;
     self.belts = [

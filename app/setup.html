@@ -137,7 +137,7 @@
 
           <!-- Step 1 tab -->
           <md-tab id="step-1">
-            <md-tab-label>Step 1</md-tab-label>
+          <md-tab-label><md-icon>looks_one</md-icon>Profile</md-tab-label>
             <md-tab-body>
               <div class="md-padding"
                 layout="row" layout-align="center center">
@@ -166,11 +166,13 @@
                         <p class="md-body-1">
                           Your school must be listed with Google to be saved. Selecting a school will add you to the school's public members list. You can update your school at anytime.
                         </p>
+                        <!-- Form start -->
                         <form name="setup">
                           <md-input-container class="md-block">
                             <label for="school">Your school</label>
-                            <input name="school"></md-input-container>
-                        </form>
+                            <input name="school">
+                          </md-input-container>
+
                       </div>
 
                     </div>
@@ -187,7 +189,7 @@
 
           <!-- Step 2 tab -->
           <md-tab id="step-2">
-            <md-label>Step 2</md-label>
+            <md-label><md-icon>looks_two</md-icon>Rank</md-label>
             <md-tab-body>
               <div class="md-padding"
                 layout="row" layout-align="center center">
@@ -196,11 +198,11 @@
                   <md-card-content>
                     <div class="">
 
-                      <!-- Setup school -->
                       <div class="md-padding"
                         layout="column" layout-align="center stretch">
                         <h1 class="md-title">What is your rank?</h1>
-                        <form name="setup">
+
+                          <!-- Choose rank -->
                           <md-radio-group ng-model="setup.rank">
                             <div layout="row" layout-wrap>
                               <md-radio-button ng-repeat="belt in ul.belts" 
@@ -211,7 +213,7 @@
                               </md-radio-button>
                             </div>
                           </md-radio-group>
-                        </form>
+
                       </div>
 
                     </div>
@@ -232,7 +234,7 @@
 
           <!-- Step 3 tab -->
           <md-tab id="step-3">
-            <md-label>Step 3</md-label>
+            <md-label><md-icon>looks_3</md-icon>Hours</md-label>
             <md-tab-body>
               <div class="md-padding"
                 layout="row" layout-align="center center">
@@ -241,34 +243,55 @@
                   <md-card-content>
                     <div class="">
 
-                      <!-- Setup school -->
+                      <!-- Setup hours -->
                       <div class="md-padding"
                         layout="column" layout-align="center stretch" layout-margin>
                         <h1 class="md-title">Already put in some mattime?</h1>
                         <p class="md-body-1">
                           If you've already spent some time on the mats, let's (roughly) calculate your hours. New session hours will be added onto this. Otherwise, you can leave these as is.
                         </p>
-                        <div layout="row" layout-align="space-between center">
-                          <div class="" flex="45">
+                        <div layout="row" layout-align="space-between center" layout-wrap>
+                          <!-- GI hours -->
+                          <div class="" flex="100" flex-gt-xs="45">
                             <h1 class="md-title">GI</h1>
-                            <form name="setup">
+
                               <md-input-container class="md-block">
                                 <label for="gi-hours">How many hours have you trained GI?</label>
-                                <input type="number" name="gi-hours"></md-input-container>
-                            </form>
+                                <input type="number" name="gi-hours" ng-model="ul.setup.baseMatTimeGi" min="0">
+                              </md-input-container>
+
                           </div>
-                          <div class="" flex="45">
+                          <!-- Plus icon -->
+                          <div layout layout-align="center center"
+                            flex-xs="100">
+                            <span><md-icon>add</md-icon></span>
+                          </div>
+                          <!-- NOGI hours -->
+                          <div class="" flex="100" flex-gt-xs="45">
                             <h1 class="md-title">NO GI</h1>
-                            <form name="setup">
+
                               <md-input-container class="md-block">
                                 <label for="nogi-hours">How many hours have you trained NOGI?</label>
-                                <input type="number" name="nogi-hours"></md-input-container>
+                                <input type="number" name="nogi-hours" ng-model="ul.setup.baseMatTimeNoGi" min="0">
+                              </md-input-container>
                             </form>
                           </div>
                         </div>
-                          <p class="md-caption">
-                            One way to calculate your existing hours: Average hours training GI a week * (number of weeks you've been training - number of weeks taken off for injuries/breaks).</p>
-                            <p class="md-caption">Eg: If you have been training for 2.5 years and train an average of 4 hours of GI a week: <code>4(hours/week) * (52(weeks in a year) * 2.5(years trained) - (3[average time off] * 2.5[years trained])) = 490 hours</code> </p>
+                        <!-- Total hours -->
+                        <div layout="row" layout-align="center-center">
+                          <h1>
+                            Total hours: {{ul.setup.baseMatTimeGi + ul.setup.baseMatTimeNoGi}}
+                          </h1>
+                        </div>
+                        <md-divider></md-divider>
+                        <!-- Tips -->
+                        <p class="md-caption">
+                          One way to calculate your existing hours: Average hours training GI a week * (number of weeks you've been training - number of weeks taken off for injuries/breaks).
+                        </p>
+                        <p class="md-caption">
+                          Eg: If you've been training for 2.5 years with an average of 4 hours of GI mattime a week and about 3 weeks off a year:
+                          <code>4 * (52(weeks in a year) * 2.5 - (3 * 2.5)) = 490 GI hours</code>
+                        </p>
                           
                       </div>
 
@@ -280,7 +303,7 @@
                       </md-button>
                       <span flex></span>
                       <md-button ng-click="ul.nextStep()">Skip</md-button>
-                      <md-button class="md-raised md-accent" ng-click="ul.nextStep()">Next</md-button>
+                      <md-button class="md-raised md-accent">Save</md-button>
                     </md-card-actions>
                   </md-card-content>
                 </md-card>
